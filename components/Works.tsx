@@ -4,13 +4,28 @@ import { useEffect, useRef } from "react";
 
 const projects = [
   {
-    id: "sip-magang",
-    title: "SIP-MAGANG — Sistem Absensi Geofencing",
-    tags: ["Next.js", "Prisma", "PostgreSQL", "Geofencing"],
+    id: "transjogja",
+    title: "Trans Jogja Navigator — Sistem Navigasi Rute Bus",
+    tags: ["JavaScript", "Web App", "Geolocation", "Leaflet"],
     description:
-      "Sistem absensi berbasis geofencing untuk Disdikpora DIY. Memvalidasi lokasi peserta magang secara real-time dan mengelola data kehadiran ratusan mahasiswa. Proyek kolaborasi bersama tim.",
+      "Sistem navigasi cerdas berbasis web untuk jaringan bus Trans Jogja. Membantu pengguna menemukan rute tercepat, halte terdekat, dan estimasi waktu perjalanan secara gratis tanpa perlu login.",
+    year: "2024",
+    link: "https://transjogjanavigator.vercel.app",
+    repoLink: "https://github.com/vanoathalla/transjogja-navigator",
+    image: "/projects/transjogja.png",
+    imageAspect: "aspect-[16/10]",
+    imageBg: "bg-(--color-surface-soft)",
+    imageFit: "object-cover object-top",
+  },
+  {
+    id: "sip-magang",
+    title: "SIP-MAGANG — Sistem Presensi DISPORA DIY",
+    tags: ["Next.js", "TypeScript", "Prisma", "PostgreSQL"],
+    description:
+      "Aplikasi web presensi dan pelaporan magang untuk Dinas Pemuda dan Olahraga (DISPORA) DIY. Memvalidasi absensi peserta magang serta mengelola data kehadiran secara terpusat.",
     year: "2025",
-    link: "https://github.com/hafizar123/presensi-magang",
+    link: "https://github.com/vanoathalla/presensi-magang",
+    repoLink: "https://github.com/vanoathalla/presensi-magang",
     image: "/projects/sip-magang.png",
     imageAspect: "aspect-[16/10]",
     imageBg: "bg-(--color-surface-soft)",
@@ -19,64 +34,55 @@ const projects = [
   {
     id: "mykarisma",
     title: "MyKarisma — Aplikasi Mobile Flutter",
-    tags: ["Flutter", "Dart", "Mobile Dev", "SQLite"],
+    tags: ["Flutter", "Dart", "Mobile App", "SQLite"],
     description:
-      "Aplikasi mobile untuk pemuda Kemirisewu. Memudahkan manajemen acara, pencatatan keuangan, dokumentasi kegiatan, serta navigasi lokasi berbasis Flutter & Dart.",
+      "Aplikasi mobile lintas platform untuk pemuda Karisma Kemirisewu. Memfasilitasi manajemen acara, pencatatan keuangan transparan, dokumentasi kegiatan, serta arah lokasi kegiatan.",
     year: "2026",
     link: "https://github.com/vanoathalla/mykarisma",
+    repoLink: "https://github.com/vanoathalla/mykarisma",
     image: "/projects/mykarisma.png",
     imageAspect: "aspect-[16/10]",
     imageBg: "bg-(--color-surface)",
     imageFit: "object-contain p-3",
   },
   {
-    id: "simdagenak",
-    title: "SIMDAGENAK Sleman — Portal Data Terpadu",
-    tags: ["Laravel", "MySQL", "Chart.js", "Bootstrap"],
+    id: "counselink",
+    title: "Counselink — Platform Konseling Kesehatan",
+    tags: ["PHP", "MySQL", "Bootstrap", "Web App"],
     description:
-      "Platform portal terintegrasi Kabupaten Sleman untuk mengumpulkan, mengelola, dan memvisualisasikan data statistik terpilah gender dan anak secara transparan dan akurat.",
+      "Aplikasi web konsultasi kesehatan mental terintegrasi yang menghubungkan pengguna dengan konselor profesional, dilengkapi manajemen jadwal konsultasi dan sistem informasi terstruktur.",
     year: "2024",
-    link: "https://github.com/vanoathalla?tab=repositories",
-    image: "/projects/simdagenak.png",
+    link: "https://github.com/vanoathalla/counselink",
+    repoLink: "https://github.com/vanoathalla/counselink",
+    image: "/projects/counselink.png",
     imageAspect: "aspect-[16/10]",
     imageBg: "bg-(--color-surface-soft)",
     imageFit: "object-cover object-top",
   },
   {
-    id: "siraman",
-    title: "Siraman Sehat Jiwa — Portal PPK Ormawa",
-    tags: ["Laravel", "MySQL", "Bootstrap", "JavaScript"],
+    id: "batik-gumregah",
+    title: "Batik Gumregah — Digital Catalog & Branding",
+    tags: ["Next.js", "TypeScript", "Tailwind CSS", "E-Catalog"],
     description:
-      "Aplikasi portal kesehatan jiwa digital terintegrasi untuk pendataan berkala warga ODDP serta fitur deteksi dini kesehatan mental mandiri yang interaktif.",
+      "Website showcase dan katalog digital produk UMKM Batik Gumregah. Menampilkan visual produk kain batik khas dengan navigasi responsif, tata letak modern, dan optimasi performa cepat.",
     year: "2024",
-    link: "https://github.com/vanoathalla?tab=repositories",
-    image: "/projects/siraman.png",
-    imageAspect: "aspect-[16/10]",
-    imageBg: "bg-(--color-surface-soft)",
-    imageFit: "object-cover object-top",
-  },
-  {
-    id: "futsal-if",
-    title: "IF CUP & Futsal Informatika — Event & Branding",
-    tags: ["Leadership", "Event Management", "Branding", "Creative"],
-    description:
-      "Memimpin perencanaan dan identitas visual komunitas futsal serta kepanitiaan IF CUP — mengelola strategi promosi, desain identitas, dan operasional turnamen sebagai Ketua Pelaksana.",
-    year: "2024",
-    link: "https://github.com/vanoathalla?tab=repositories",
-    image: "/projects/futsal-if.png",
+    link: "https://batik-gumregah.vercel.app",
+    repoLink: "https://github.com/vanoathalla/batik-gumregah",
+    image: "/projects/batik-gumregah.png",
     imageAspect: "aspect-[16/10]",
     imageBg: "bg-(--color-surface)",
-    imageFit: "object-cover",
+    imageFit: "object-cover object-top",
   },
   {
-    id: "studysync",
-    title: "StudySync — Academic Dashboard",
-    tags: ["Node.js", "Express", "TailwindCSS", "Chart.js"],
+    id: "aturbrat",
+    title: "AturBrat Kobrat — Web Manajemen Operasional",
+    tags: ["React", "Vite", "JavaScript", "Tailwind CSS"],
     description:
-      "Dashboard pemantauan akademik personal mahasiswa terintegrasi untuk pelacakan jadwal kuliah, tugas, jadwal ujian, serta visualisasi progress belajar menggunakan analitik statistik.",
+      "Aplikasi web interaktif untuk pengelolaan kegiatan dan operasional komunitas Kobrat yang dibangun menggunakan React, Vite, dan Tailwind CSS dengan pengalaman pengguna yang cepat dan mulus.",
     year: "2024",
-    link: "https://github.com/vanoathalla?tab=repositories",
-    image: "/projects/studysync.png",
+    link: "https://aturbrat-kobrat.vercel.app",
+    repoLink: "https://github.com/vanoathalla/aturbrat-kobrat",
+    image: "/projects/aturbrat.png",
     imageAspect: "aspect-[16/10]",
     imageBg: "bg-(--color-surface-soft)",
     imageFit: "object-cover object-top",
@@ -141,17 +147,31 @@ function ProjectCard({ project }: { project: (typeof projects)[number] }) {
           {project.description}
         </p>
 
-        {/* Link */}
-        <a
-          href={project.link}
-          target={project.link !== "#" ? "_blank" : undefined}
-          rel={project.link !== "#" ? "noopener noreferrer" : undefined}
-          className="font-sans text-[13px] text-(--color-accent)
-            underline-offset-4 hover:underline transition-all duration-200 w-fit"
-          aria-label={`Lihat detail proyek ${project.title}`}
-        >
-          Lihat Proyek →
-        </a>
+        {/* Links */}
+        <div className="flex items-center gap-4 pt-1">
+          <a
+            href={project.link}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-sans text-[13px] text-(--color-accent)
+              underline-offset-4 hover:underline transition-all duration-200 w-fit"
+            aria-label={`Buka live demo ${project.title}`}
+          >
+            Buka Proyek →
+          </a>
+          {project.repoLink && project.repoLink !== project.link && (
+            <a
+              href={project.repoLink}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-sans text-[12px] text-(--color-text-muted)
+                hover:text-(--color-text-primary) transition-colors duration-200"
+              aria-label={`Lihat source code ${project.title}`}
+            >
+              Source Code ↗
+            </a>
+          )}
+        </div>
       </div>
     </article>
   );
