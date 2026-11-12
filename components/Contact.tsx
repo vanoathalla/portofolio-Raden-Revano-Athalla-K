@@ -36,17 +36,17 @@ export default function Contact() {
     >
       <div className="max-w-[600px] mx-auto text-center">
         <p className="fade-up font-sans text-[11px] tracking-[0.15em] uppercase text-(--color-text-muted) mb-5">
-          Hubungi Saya
+          Kontak
         </p>
 
         <h2 className="fade-up font-display font-normal text-[clamp(2.2rem,5vw,56px)] leading-[1.1] text-(--color-text-primary) mb-6">
-          Tertarik ngobrol
+          Mari terhubung dan
           <br />
-          atau mau kenalan?
+          berdiskusi lebih lanjut.
         </h2>
 
         <p className="fade-up font-sans text-sm text-(--color-text-muted) max-w-md mx-auto mb-10 leading-relaxed">
-          Mau nanya-nanya, diskusi soal proyek seru, atau sekadar bertukar sapa — pintu selalu terbuka. Kontak lewat email atau media sosial di bawah ya!
+          Terbuka untuk diskusi seputar proyek teknologi, peluang kolaborasi, maupun pertanyaan terkait karya di portofolio ini. Silakan hubungi saya melalui email atau media sosial di bawah.
         </p>
 
         {/* Email — underline animasi dari kiri */}

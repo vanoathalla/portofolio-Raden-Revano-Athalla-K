@@ -42,24 +42,24 @@ export default function About() {
             Tentang Saya
           </p>
           <h2 className="fade-up font-display font-normal text-[clamp(2rem,3.5vw,42px)] leading-[1.15] text-(--color-text-primary) mb-8">
-            Suka ngulik hal baru,<br />berkreasi, &amp; berproses.
+            Dedikasi teknis, pengalaman<br />organisasi, &amp; kemauan belajar.
           </h2>
           <div className="space-y-5">
             <p className="fade-up font-sans font-light text-[16px] text-(--color-text-muted) leading-relaxed">
-              Kenalin, aku Raden Revano Athalla Kartika (biasa dipanggil Vano). Berasal dari
-              Yogyakarta dan saat ini lagi menempuh masa kuliah di UPN &ldquo;Veteran&rdquo; Yogyakarta.
-              Sehari-hari aku suka bereksplorasi bikin tampilan web yang enak dilihat, nyobain
-              teknologi baru, dan bikin project-project kecil yang seru.
+              Saya Raden Revano Athalla Kartika (akrab disapa Vano), mahasiswa Teknik Informatika
+              UPN &ldquo;Veteran&rdquo; Yogyakarta angkatan 2023. Perjalanan saya di bidang teknologi
+              berangkat dari ketertarikan merancang aplikasi web dan mobile yang fungsional, rapi,
+              serta memberikan dampak nyata bagi penggunanya.
             </p>
             <p className="fade-up font-sans font-light text-[16px] text-(--color-text-muted) leading-relaxed">
-              Nggak melulu di depan laptop, aku juga aktif di berbagai kegiatan kampus dan organisasi.
-              Salah satu pengalaman yang paling berkesan adalah saat dipercaya memimpin acara
-              IF CUP 2024 sebagai Ketua Pelaksana — seru banget bisa belajar ngatur tim besar,
-              komunikasi bareng banyak kepala, dan bareng-bareng nyelesaiin acara sampai sukses.
+              Selain kegiatan akademik dan teknis, saya aktif dalam kepanitiaan dan organisasi kampus.
+              Salah satu pencapaian penting saya adalah memimpin jalannya IF CUP 2024 sebagai Ketua Pelaksana,
+              di mana saya bertanggung jawab mengarahkan seluruh divisi, menyusun perencanaan kegiatan, dan memastikan
+              kolaborasi tim berjalan lancar dari awal hingga akhir.
             </p>
             <p className="fade-up font-sans font-light text-[16px] text-(--color-text-muted) leading-relaxed">
-              Kalo lagi rehat dari urusan koding, biasanya aku ngisi waktu dengan main futsal,
-              nongkrong bareng temen, atau sekadar jalan-jalan cari inspirasi baru.
+              Saya memegang komitmen untuk terus berkembang, terbuka terhadap masukan, dan selalu antusias
+              dalam menghadapi tantangan baru dalam pengembangan perangkat lunak maupun kerja sama tim.
             </p>
           </div>
         </div>

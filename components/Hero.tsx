@@ -29,17 +29,16 @@ export default function Hero() {
         {/* Kiri — teks */}
         <div className="max-w-[680px]">
           <h1
-            className="font-display font-normal leading-[1.1] text-(--color-text-primary) text-[40px] md:text-[72px]"
-            aria-label="Halo, aku Vano. Suka ngulik ide, desain, dan kode."
+            className="font-display font-normal leading-[1.1] text-(--color-text-primary) text-[40px] md:text-[68px]"
+            aria-label="Raden Revano Athalla Kartika"
           >
-            <span className="hero-line block">Halo, aku Vano.</span>
-            <span className="hero-line block">Suka ngulik ide,</span>
-            <span className="hero-line block">desain, &amp; kode.</span>
+            <span className="hero-line block">Raden Revano</span>
+            <span className="hero-line block">Athalla Kartika.</span>
           </h1>
 
-          <p className="fade-up font-sans font-light text-[17px] text-(--color-text-muted) mt-6 max-w-[480px] leading-relaxed">
-            Mahasiswa yang berbasis di Yogyakarta. Keseharian diisi dengan eksplorasi
-            tampilan web, utak-atik aplikasi mobile, dan aktif di berbagai kegiatan kampus.
+          <p className="fade-up font-sans font-light text-[17px] text-(--color-text-muted) mt-6 max-w-[500px] leading-relaxed">
+            Mahasiswa Teknik Informatika UPN &ldquo;Veteran&rdquo; Yogyakarta yang berfokus pada
+            pengembangan web, aplikasi mobile, serta aktif dalam kepemimpinan dan pengelolaan kegiatan.
           </p>
 
           <div className="fade-up flex flex-wrap items-center gap-4 mt-10">
@@ -48,14 +47,14 @@ export default function Hero() {
               onClick={(e) => { e.preventDefault(); document.getElementById("work")?.scrollIntoView({ behavior: "smooth" }); }}
               className="inline-block font-sans text-[12px] tracking-[0.12em] uppercase border border-(--color-text-primary) text-(--color-text-primary) px-8 py-[14px] hover:bg-(--color-text-primary) hover:text-(--color-base) transition-colors duration-200"
             >
-              Lihat Karya
+              Lihat Proyek
             </a>
             <a
               href="#contact"
               onClick={(e) => { e.preventDefault(); document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" }); }}
               className="inline-block font-sans text-[13px] text-(--color-accent) underline-offset-4 hover:underline transition-all duration-200"
             >
-              Kenalan Yuk →
+              Hubungi Saya →
             </a>
           </div>
         </div>
