@@ -11,41 +11,75 @@ const projects = [
       "Sistem absensi berbasis geofencing untuk Disdikpora DIY. Memvalidasi lokasi peserta magang secara real-time dan mengelola data kehadiran ratusan mahasiswa. Proyek kolaborasi bersama tim.",
     year: "2025",
     link: "https://github.com/hafizar123/presensi-magang",
-    imageAspect: "aspect-[4/5]",
+    image: "/projects/sip-magang.png",
+    imageAspect: "aspect-[16/10]",
     imageBg: "bg-(--color-surface-soft)",
+    imageFit: "object-cover object-top",
   },
   {
     id: "mykarisma",
-    title: "MyKarisma — Aplikasi Mobile",
-    tags: ["Flutter", "Dart", "Mobile Dev"],
+    title: "MyKarisma — Aplikasi Mobile Flutter",
+    tags: ["Flutter", "Dart", "Mobile Dev", "SQLite"],
     description:
-      "Aplikasi mobile yang dibangun dengan Flutter. Proyek ini menjadi langkah awal eksplorasi pengembangan aplikasi lintas platform menggunakan ekosistem Dart dan Flutter.",
+      "Aplikasi mobile untuk pemuda Kemirisewu. Memudahkan manajemen acara, pencatatan keuangan, dokumentasi kegiatan, serta navigasi lokasi berbasis Flutter & Dart.",
     year: "2026",
     link: "https://github.com/vanoathalla/mykarisma",
-    imageAspect: "aspect-[3/2]",
+    image: "/projects/mykarisma.png",
+    imageAspect: "aspect-[16/10]",
     imageBg: "bg-(--color-surface)",
+    imageFit: "object-contain p-3",
   },
   {
-    id: "if-cup",
-    title: "IF CUP — Event Management",
-    tags: ["Kepanitiaan", "Leadership", "Koordinasi"],
+    id: "simdagenak",
+    title: "SIMDAGENAK Sleman — Portal Data Terpadu",
+    tags: ["Laravel", "MySQL", "Chart.js", "Bootstrap"],
     description:
-      "Memimpin perencanaan, koordinasi, dan pengawasan seluruh divisi IF CUP sebagai Ketua Pelaksana — menyediakan solusi strategis untuk kendala selama persiapan dan pelaksanaan acara.",
+      "Platform portal terintegrasi Kabupaten Sleman untuk mengumpulkan, mengelola, dan memvisualisasikan data statistik terpilah gender dan anak secara transparan dan akurat.",
     year: "2024",
-    link: "#",
-    imageAspect: "aspect-[3/2]",
+    link: "https://github.com/vanoathalla?tab=repositories",
+    image: "/projects/simdagenak.png",
+    imageAspect: "aspect-[16/10]",
     imageBg: "bg-(--color-surface-soft)",
+    imageFit: "object-cover object-top",
   },
   {
-    id: "portofolio",
-    title: "Portfolio Website — Desain & Pengembangan",
-    tags: ["Next.js", "Tailwind CSS", "TypeScript"],
+    id: "siraman",
+    title: "Siraman Sehat Jiwa — Portal PPK Ormawa",
+    tags: ["Laravel", "MySQL", "Bootstrap", "JavaScript"],
     description:
-      "Website portfolio personal yang dibangun dengan Next.js 16, Tailwind CSS v4, dan TypeScript. Menampilkan desain sistem yang konsisten, animasi scroll, dan custom cursor.",
-    year: "2025",
+      "Aplikasi portal kesehatan jiwa digital terintegrasi untuk pendataan berkala warga ODDP serta fitur deteksi dini kesehatan mental mandiri yang interaktif.",
+    year: "2024",
     link: "https://github.com/vanoathalla?tab=repositories",
-    imageAspect: "aspect-[16/6]",
+    image: "/projects/siraman.png",
+    imageAspect: "aspect-[16/10]",
     imageBg: "bg-(--color-surface-soft)",
+    imageFit: "object-cover object-top",
+  },
+  {
+    id: "futsal-if",
+    title: "IF CUP & Futsal Informatika — Event & Branding",
+    tags: ["Leadership", "Event Management", "Branding", "Creative"],
+    description:
+      "Memimpin perencanaan dan identitas visual komunitas futsal serta kepanitiaan IF CUP — mengelola strategi promosi, desain identitas, dan operasional turnamen sebagai Ketua Pelaksana.",
+    year: "2024",
+    link: "https://github.com/vanoathalla?tab=repositories",
+    image: "/projects/futsal-if.png",
+    imageAspect: "aspect-[16/10]",
+    imageBg: "bg-(--color-surface)",
+    imageFit: "object-cover",
+  },
+  {
+    id: "studysync",
+    title: "StudySync — Academic Dashboard",
+    tags: ["Node.js", "Express", "TailwindCSS", "Chart.js"],
+    description:
+      "Dashboard pemantauan akademik personal mahasiswa terintegrasi untuk pelacakan jadwal kuliah, tugas, jadwal ujian, serta visualisasi progress belajar menggunakan analitik statistik.",
+    year: "2024",
+    link: "https://github.com/vanoathalla?tab=repositories",
+    image: "/projects/studysync.png",
+    imageAspect: "aspect-[16/10]",
+    imageBg: "bg-(--color-surface-soft)",
+    imageFit: "object-cover object-top",
   },
 ];
 
@@ -55,15 +89,26 @@ function ProjectCard({ project }: { project: (typeof projects)[number] }) {
       className="project-card fade-up flex flex-col gap-5 pl-4"
       data-cursor-hover
     >
-      {/* Gambar placeholder */}
+      {/* Gambar project */}
       <div
-        className={`w-full ${project.imageAspect} ${project.imageBg} flex items-center justify-center`}
+        className={`w-full ${project.imageAspect} ${project.imageBg} overflow-hidden rounded-xl border border-(--color-border) relative group/img shadow-sm flex items-center justify-center`}
         role="img"
         aria-label={`Preview proyek ${project.title}`}
       >
-        <span className="font-sans text-[12px] text-(--color-text-muted)" aria-hidden="true">
-          Project Preview
-        </span>
+        {project.image ? (
+          <img
+            src={project.image}
+            alt={`Preview proyek ${project.title}`}
+            className={`w-full h-full ${project.imageFit} transition-transform duration-500 ease-out group-hover/img:scale-105`}
+            loading="lazy"
+          />
+        ) : (
+          <div className="w-full h-full flex items-center justify-center">
+            <span className="font-sans text-[12px] text-(--color-text-muted)" aria-hidden="true">
+              Project Preview
+            </span>
+          </div>
+        )}
       </div>
 
       {/* Meta */}
@@ -137,7 +182,7 @@ export default function Works() {
     return () => observer.disconnect();
   }, []);
 
-  const [p1, p2, p3, p4] = projects;
+  const [p1, p2, p3, p4, p5, p6] = projects;
 
   return (
     <section
@@ -164,15 +209,21 @@ export default function Works() {
         </span>
 
         {/* Baris 1 — asimetris 55/45 */}
-        <div className="grid grid-cols-1 md:grid-cols-[55fr_45fr] gap-8 mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-[55fr_45fr] gap-8 mb-12">
           <ProjectCard project={p1} />
           <ProjectCard project={p2} />
         </div>
 
         {/* Baris 2 — asimetris dibalik 45/55 */}
-        <div className="grid grid-cols-1 md:grid-cols-[45fr_55fr] gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-[45fr_55fr] gap-8 mb-12">
           <ProjectCard project={p3} />
           <ProjectCard project={p4} />
+        </div>
+
+        {/* Baris 3 — asimetris 55/45 */}
+        <div className="grid grid-cols-1 md:grid-cols-[55fr_45fr] gap-8">
+          <ProjectCard project={p5} />
+          <ProjectCard project={p6} />
         </div>
 
         {/* Lihat semua */}
