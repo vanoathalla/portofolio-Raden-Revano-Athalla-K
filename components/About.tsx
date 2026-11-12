@@ -42,23 +42,24 @@ export default function About() {
             Tentang Saya
           </p>
           <h2 className="fade-up font-display font-normal text-[clamp(2rem,3.5vw,42px)] leading-[1.15] text-(--color-text-primary) mb-8">
-            Terorganisir, dapat diandalkan,<br />dan selalu ingin berkembang.
+            Fokus pada solusi nyata,<br />senang ngulik &amp; kolaborasi.
           </h2>
           <div className="space-y-5">
             <p className="fade-up font-sans font-light text-[16px] text-(--color-text-muted) leading-relaxed">
-              Saya Raden Revano Athalla Kartika, mahasiswa aktif S-1 Teknik Informatika
-              di UPN &ldquo;Veteran&rdquo; Yogyakarta angkatan 2023. Saya memiliki kemampuan
-              akademik dan interpersonal yang baik, serta terbiasa mengelola banyak
-              prioritas dengan sikap positif untuk mencapai tujuan tim.
+              Saya Raden Revano Athalla Kartika, biasa dipanggil Vano. Saat ini sedang
+              menempuh studi S-1 Teknik Informatika di UPN &ldquo;Veteran&rdquo; Yogyakarta (angkatan 2023).
+              Ketertarikan saya ada di persimpangan antara rekayasa perangkat lunak, arsitektur data,
+              dan antarmuka pengguna yang nyaman dipakai.
             </p>
             <p className="fade-up font-sans font-light text-[16px] text-(--color-text-muted) leading-relaxed">
-              Kapasitas saya terbukti melalui keterlibatan aktif di berbagai organisasi
-              dan kepanitiaan selama masa studi — mulai dari memimpin IF CUP sebagai
-              Ketua Pelaksana hingga menjadi staff di berbagai divisi lintas bidang.
+              Selain mengerjakan proyek koding, saya aktif di organisasi kampus dan kepanitiaan.
+              Pengalaman paling berkesan adalah saat dipercaya menjadi Ketua Pelaksana IF CUP 2024 —
+              mengkoordinasi puluhan panitia lintas divisi, menyusun strategi acara, dan menyelesaikan
+              kendala lapangan secara cepat dan terarah.
             </p>
             <p className="fade-up font-sans font-light text-[16px] text-(--color-text-muted) leading-relaxed">
-              Saya mudah bergaul, berbaur dengan lingkungan baru, dan mampu
-              mengkoordinir tim dalam menyelesaikan sebuah tugas atau tanggung jawab.
+              Bagi saya, perangkat lunak yang bagus adalah yang benar-benar mempermudah urusan orang lain.
+              Karena itu saya selalu terbuka untuk belajar teknologi baru, berdiskusi ide, dan bekerja bareng tim.
             </p>
           </div>
         </div>

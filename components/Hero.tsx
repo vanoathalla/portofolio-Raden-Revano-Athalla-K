@@ -30,16 +30,17 @@ export default function Hero() {
         <div className="max-w-[680px]">
           <h1
             className="font-display font-normal leading-[1.1] text-(--color-text-primary) text-[40px] md:text-[72px]"
-            aria-label="Membangun pengalaman digital dengan presisi dan dedikasi."
+            aria-label="Membangun web dan aplikasi yang fungsional, rapi, dan bermakna."
           >
-            <span className="hero-line block">Membangun</span>
-            <span className="hero-line block">pengalaman digital</span>
-            <span className="hero-line block">dengan presisi &amp; dedikasi.</span>
+            <span className="hero-line block">Membangun web &amp;</span>
+            <span className="hero-line block">aplikasi fungsional,</span>
+            <span className="hero-line block">rapi, dan bermakna.</span>
           </h1>
 
           <p className="fade-up font-sans font-light text-[16px] text-(--color-text-muted) mt-6 max-w-[480px] leading-relaxed">
-            Mahasiswa Teknik Informatika yang terorganisir, dapat diandalkan, dan
-            bersemangat membangun produk digital yang fungsional sekaligus estetis.
+            Halo, saya Raden Revano Athalla Kartika — mahasiswa Teknik Informatika
+            UPNVY angkatan 2023. Senang merancang aplikasi web, mobile, dan berkolaborasi
+            membangun produk digital yang beneran bermanfaat.
           </p>
 
           <div className="fade-up flex flex-wrap items-center gap-4 mt-10">

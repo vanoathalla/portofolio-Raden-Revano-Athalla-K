@@ -39,11 +39,15 @@ export default function Contact() {
           Hubungi Saya
         </p>
 
-        <h2 className="fade-up font-display font-normal text-[clamp(2.2rem,5vw,56px)] leading-[1.1] text-(--color-text-primary) mb-10">
-          Mari berkolaborasi
+        <h2 className="fade-up font-display font-normal text-[clamp(2.2rem,5vw,56px)] leading-[1.1] text-(--color-text-primary) mb-6">
+          Punya ide atau proyek?
           <br />
-          dan berkarya bersama.
+          Yuk ngobrol bareng.
         </h2>
+
+        <p className="fade-up font-sans text-sm text-(--color-text-muted) max-w-md mx-auto mb-10 leading-relaxed">
+          Terbuka untuk peluang magang, proyek web/mobile development, kolaborasi tim, atau sekadar diskusi santai seputar teknologi.
+        </p>
 
         {/* Email — underline animasi dari kiri */}
         <div className="fade-up mb-10">

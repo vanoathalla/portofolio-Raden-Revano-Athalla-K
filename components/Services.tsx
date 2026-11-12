@@ -4,8 +4,8 @@ import { useEffect, useRef } from "react";
 
 const services = [
   {
-    title: "Pengembangan Web",
-    body: "Membangun aplikasi web dari nol menggunakan teknologi modern seperti Next.js dan React — dari arsitektur hingga tampilan akhir yang rapi dan responsif.",
+    title: "Web Development",
+    body: "Membangun website dan sistem web dari nol menggunakan Next.js, React, atau Laravel. Mengutamakan performa yang kencang, tampilan responsif di semua ukuran layar, dan kode yang mudah dirawat.",
     icon: (
       <svg
         width="28" height="28" viewBox="0 0 28 28"
@@ -20,8 +20,8 @@ const services = [
     ),
   },
   {
-    title: "Desain UI & Implementasi",
-    body: "Menerjemahkan desain Figma menjadi antarmuka yang hidup — dengan perhatian penuh pada spacing, tipografi, motion, dan edge case.",
+    title: "Mobile App Development",
+    body: "Mengembangkan aplikasi mobile Android & iOS menggunakan Flutter dan Dart. Mulai dari perancangan antarmuka, pengelolaan database lokal SQLite, integrasi REST API, sampai fitur geolokasi/peta.",
     icon: (
       <svg
         width="28" height="28" viewBox="0 0 28 28"
@@ -29,15 +29,15 @@ const services = [
         strokeWidth="1.2" strokeLinecap="round" strokeLinejoin="round"
         aria-hidden="true" focusable="false"
       >
-        <rect x="3" y="3" width="22" height="22" rx="1" />
-        <rect x="7" y="7" width="14" height="14" rx="1" />
-        <rect x="11" y="11" width="6" height="6" rx="1" />
+        <rect x="7" y="3" width="14" height="22" rx="3" />
+        <line x1="11" y1="21" x2="17" y2="21" />
+        <line x1="13" y1="6" x2="15" y2="6" />
       </svg>
     ),
   },
   {
-    title: "Koordinasi & Manajemen",
-    body: "Berpengalaman memimpin dan berkoordinasi lintas divisi dalam kepanitiaan berskala besar — terorganisir, bertanggung jawab, dan berorientasi pada hasil.",
+    title: "Leadership & Koordinasi Tim",
+    body: "Berpengalaman memimpin tim kepanitiaan berskala besar (seperti Ketua Pelaksana IF CUP 2024). Terbiasa komunikasi santai tapi solutif, menyusun alur kerja, dan menjaga target proyek selesai tepat waktu.",
     icon: (
       <svg
         width="28" height="28" viewBox="0 0 28 28"

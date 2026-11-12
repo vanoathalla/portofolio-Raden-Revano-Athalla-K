@@ -5,15 +5,15 @@ import { useEffect, useRef } from "react";
 const testimonials = [
   {
     quote:
-      "Vano selalu teliti dan terorganisir dalam menyelesaikan pengembangan sistem. Setiap detail arsitektur, validasi data, dan tampilan antarmuka selalu dieksekusi dengan rapi dan andal.",
+      "Waktu ngerjain SIP-MAGANG bareng, Vano ngebantu banget di bagian Next.js dan integrasi geofencing-nya. Orangnya gercep dan bisa diandalkan buat urusan teknis maupun deadline.",
     name: "HAFIZAR",
-    role: "Lead Developer, SIP-MAGANG DIY",
+    role: "Project Partner, SIP-MAGANG DISPORA DIY",
   },
   {
     quote:
-      "Bekerja sama dengan Revano selalu menyenangkan. Kemampuan komunikasi dan dedikasinya dalam koordinasi tim serta perancangan aplikasi membuat setiap tantangan terselesaikan dengan solid.",
+      "Vano orangnya asik banget diajak diskusi dan inisiatifnya tinggi. Mau di urusan koding web ataupun manajemen acara, komunikasinya selalu enak dan eksekusinya rapi.",
     name: "RIZKY P.",
-    role: "Creative Partner, RIVASA Project",
+    role: "Collaborator & Frontend Dev",
   },
 ];
 
@@ -62,7 +62,7 @@ export default function Testimonials() {
 
       <div className="max-w-[1280px] mx-auto">
         <p className="fade-up font-sans text-[11px] tracking-[0.15em] uppercase text-(--color-text-muted) mb-16">
-          Kind Words
+          Catatan Kolaborasi
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
