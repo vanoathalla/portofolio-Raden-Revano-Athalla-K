@@ -5,15 +5,15 @@ import { useEffect, useRef } from "react";
 const testimonials = [
   {
     quote:
-      "Arden delivered the most meticulous frontend work I've ever seen. Every interaction, every transition — it all felt intentional and refined.",
-    name: "SARAH CHEN",
-    role: "Product Lead, Luminary",
+      "Vano selalu teliti dan terorganisir dalam menyelesaikan pengembangan sistem. Setiap detail arsitektur, validasi data, dan tampilan antarmuka selalu dieksekusi dengan rapi dan andal.",
+    name: "HAFIZAR",
+    role: "Lead Developer, SIP-MAGANG DIY",
   },
   {
     quote:
-      "Working with Arden felt like having a designer and an engineer in one. He caught UX issues we hadn't even thought of, then fixed them before we asked.",
-    name: "MARCUS VEIL",
-    role: "CTO, Aether SaaS",
+      "Bekerja sama dengan Revano selalu menyenangkan. Kemampuan komunikasi dan dedikasinya dalam koordinasi tim serta perancangan aplikasi membuat setiap tantangan terselesaikan dengan solid.",
+    name: "RIZKY P.",
+    role: "Creative Partner, RIVASA Project",
   },
 ];
 

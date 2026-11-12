@@ -4,20 +4,20 @@ import { useEffect, useRef } from "react";
 
 const skillGroups = [
   {
-    category: "Frontend",
-    items: ["Next.js", "React", "TypeScript", "Tailwind CSS", "HTML & CSS"],
+    category: "Frontend & Mobile",
+    items: ["Next.js", "React", "TypeScript", "Flutter & Dart", "Tailwind CSS"],
   },
   {
     category: "Backend & Database",
-    items: ["Node.js", "Prisma ORM", "PostgreSQL", "REST API", "PHP"],
+    items: ["Node.js", "Laravel", "PostgreSQL", "MySQL", "Prisma ORM"],
   },
   {
     category: "Tools & Workflow",
-    items: ["Git & GitHub", "Figma", "Canva", "Microsoft Office", "VS Code"],
+    items: ["Git & GitHub", "Figma", "VS Code", "Postman", "Canva"],
   },
   {
     category: "Soft Skills",
-    items: ["Leadership", "Team Work", "Manajemen Waktu", "Tanggung Jawab", "Kemauan Belajar"],
+    items: ["Leadership", "Team Work", "Manajemen Waktu", "Tanggung Jawab", "Problem Solving"],
   },
 ];
 
