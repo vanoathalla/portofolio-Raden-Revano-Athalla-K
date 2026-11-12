@@ -86,10 +86,10 @@ export default function Skills() {
         {/* Header */}
         <div className="fade-up mb-16">
           <p className="font-sans text-[11px] tracking-[0.15em] uppercase text-(--color-text-muted) mb-4">
-            Keahlian &amp; Pengalaman
+            Eksplorasi &amp; Pengalaman
           </p>
           <h2 className="font-display font-normal text-[clamp(2rem,4vw,42px)] leading-[1.15] text-(--color-text-primary)">
-            Tech stack &amp; alat yang biasa saya pakai.
+            Alat dan teknologi yang sering saya pakai.
           </h2>
         </div>
 

@@ -7,8 +7,6 @@ import Marquee from "@/components/Marquee";
 import Works from "@/components/Works";
 import About from "@/components/About";
 import Skills from "@/components/Skills";
-import Services from "@/components/Services";
-import Testimonials from "@/components/Testimonials";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
@@ -23,8 +21,6 @@ export default function Home() {
         <Works />
         <About />
         <Skills />
-        <Services />
-        <Testimonials />
         <Contact />
       </main>
       <Footer />

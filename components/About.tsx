@@ -42,24 +42,24 @@ export default function About() {
             Tentang Saya
           </p>
           <h2 className="fade-up font-display font-normal text-[clamp(2rem,3.5vw,42px)] leading-[1.15] text-(--color-text-primary) mb-8">
-            Fokus pada solusi nyata,<br />senang ngulik &amp; kolaborasi.
+            Suka ngulik hal baru,<br />berkreasi, &amp; berproses.
           </h2>
           <div className="space-y-5">
             <p className="fade-up font-sans font-light text-[16px] text-(--color-text-muted) leading-relaxed">
-              Saya Raden Revano Athalla Kartika, biasa dipanggil Vano. Saat ini sedang
-              menempuh studi S-1 Teknik Informatika di UPN &ldquo;Veteran&rdquo; Yogyakarta (angkatan 2023).
-              Ketertarikan saya ada di persimpangan antara rekayasa perangkat lunak, arsitektur data,
-              dan antarmuka pengguna yang nyaman dipakai.
+              Kenalin, aku Raden Revano Athalla Kartika (biasa dipanggil Vano). Berasal dari
+              Yogyakarta dan saat ini lagi menempuh masa kuliah di UPN &ldquo;Veteran&rdquo; Yogyakarta.
+              Sehari-hari aku suka bereksplorasi bikin tampilan web yang enak dilihat, nyobain
+              teknologi baru, dan bikin project-project kecil yang seru.
             </p>
             <p className="fade-up font-sans font-light text-[16px] text-(--color-text-muted) leading-relaxed">
-              Selain mengerjakan proyek koding, saya aktif di organisasi kampus dan kepanitiaan.
-              Pengalaman paling berkesan adalah saat dipercaya menjadi Ketua Pelaksana IF CUP 2024 —
-              mengkoordinasi puluhan panitia lintas divisi, menyusun strategi acara, dan menyelesaikan
-              kendala lapangan secara cepat dan terarah.
+              Nggak melulu di depan laptop, aku juga aktif di berbagai kegiatan kampus dan organisasi.
+              Salah satu pengalaman yang paling berkesan adalah saat dipercaya memimpin acara
+              IF CUP 2024 sebagai Ketua Pelaksana — seru banget bisa belajar ngatur tim besar,
+              komunikasi bareng banyak kepala, dan bareng-bareng nyelesaiin acara sampai sukses.
             </p>
             <p className="fade-up font-sans font-light text-[16px] text-(--color-text-muted) leading-relaxed">
-              Bagi saya, perangkat lunak yang bagus adalah yang benar-benar mempermudah urusan orang lain.
-              Karena itu saya selalu terbuka untuk belajar teknologi baru, berdiskusi ide, dan bekerja bareng tim.
+              Kalo lagi rehat dari urusan koding, biasanya aku ngisi waktu dengan main futsal,
+              nongkrong bareng temen, atau sekadar jalan-jalan cari inspirasi baru.
             </p>
           </div>
         </div>
@@ -72,9 +72,10 @@ export default function About() {
             </p>
             <ul className="space-y-3" aria-label="Info singkat">
               {[
-                "S-1 Teknik Informatika, 2023–Sekarang",
-                "7+ Pengalaman Organisasi & Kepanitiaan",
-                "Yogyakarta, Indonesia",
+                "Teknik Informatika, UPN 'Veteran' Yogyakarta",
+                "Berbasis di Yogyakarta, Indonesia",
+                "Ketua Pelaksana IF CUP 2024",
+                "Suka ngulik Frontend & Mobile",
               ].map((item) => (
                 <li key={item} className="font-sans text-[13px] text-(--color-text-primary) flex items-start gap-2">
                   <span className="w-1 h-1 rounded-full bg-(--color-accent) shrink-0 mt-[7px]" aria-hidden="true" />

@@ -30,17 +30,16 @@ export default function Hero() {
         <div className="max-w-[680px]">
           <h1
             className="font-display font-normal leading-[1.1] text-(--color-text-primary) text-[40px] md:text-[72px]"
-            aria-label="Membangun web dan aplikasi yang fungsional, rapi, dan bermakna."
+            aria-label="Halo, aku Vano. Suka ngulik ide, desain, dan kode."
           >
-            <span className="hero-line block">Membangun web &amp;</span>
-            <span className="hero-line block">aplikasi fungsional,</span>
-            <span className="hero-line block">rapi, dan bermakna.</span>
+            <span className="hero-line block">Halo, aku Vano.</span>
+            <span className="hero-line block">Suka ngulik ide,</span>
+            <span className="hero-line block">desain, &amp; kode.</span>
           </h1>
 
-          <p className="fade-up font-sans font-light text-[16px] text-(--color-text-muted) mt-6 max-w-[480px] leading-relaxed">
-            Halo, saya Raden Revano Athalla Kartika — mahasiswa Teknik Informatika
-            UPNVY angkatan 2023. Senang merancang aplikasi web, mobile, dan berkolaborasi
-            membangun produk digital yang beneran bermanfaat.
+          <p className="fade-up font-sans font-light text-[17px] text-(--color-text-muted) mt-6 max-w-[480px] leading-relaxed">
+            Mahasiswa yang berbasis di Yogyakarta. Keseharian diisi dengan eksplorasi
+            tampilan web, utak-atik aplikasi mobile, dan aktif di berbagai kegiatan kampus.
           </p>
 
           <div className="fade-up flex flex-wrap items-center gap-4 mt-10">
@@ -49,14 +48,14 @@ export default function Hero() {
               onClick={(e) => { e.preventDefault(); document.getElementById("work")?.scrollIntoView({ behavior: "smooth" }); }}
               className="inline-block font-sans text-[12px] tracking-[0.12em] uppercase border border-(--color-text-primary) text-(--color-text-primary) px-8 py-[14px] hover:bg-(--color-text-primary) hover:text-(--color-base) transition-colors duration-200"
             >
-              Lihat Proyek
+              Lihat Karya
             </a>
             <a
               href="#contact"
               onClick={(e) => { e.preventDefault(); document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" }); }}
               className="inline-block font-sans text-[13px] text-(--color-accent) underline-offset-4 hover:underline transition-all duration-200"
             >
-              Hubungi Saya →
+              Kenalan Yuk →
             </a>
           </div>
         </div>
