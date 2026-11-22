@@ -260,18 +260,20 @@ export default function Works() {
                 <button
                   type="button"
                   onClick={() => toggleProject(project.id)}
-                  className={`w-full py-5 md:py-7 text-left grid grid-cols-[36px_1fr_auto] md:grid-cols-[56px_1fr_auto_auto] items-center gap-3 sm:gap-4 md:gap-8 group active:scale-[0.99] transition-all duration-200 ${
-                    isExpanded ? "bg-white/40 backdrop-blur-sm rounded-xl px-3 -mx-3" : "hover:bg-white/20"
+                  className={`w-full py-5 md:py-6 text-left grid grid-cols-[36px_1fr_auto] md:grid-cols-[56px_1fr_auto_auto] items-center gap-3 sm:gap-4 md:gap-8 group active:scale-[0.98] transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                    isExpanded
+                      ? "bg-white/60 backdrop-blur-md rounded-2xl px-4 -mx-4 shadow-[0_4px_24px_rgba(0,0,0,0.03)] border border-(--color-border)/70"
+                      : "hover:bg-white/40 hover:rounded-2xl hover:px-4 hover:-mx-4 hover:shadow-[0_4px_16px_rgba(0,0,0,0.02)]"
                   }`}
                   aria-expanded={isExpanded}
                 >
                   {/* Nomor Indeks */}
-                  <span className="font-sans text-[12px] font-mono tracking-wider text-(--color-text-muted) group-hover:text-(--color-accent) transition-colors">
+                  <span className="font-sans text-[12px] font-mono tracking-wider text-(--color-text-muted) group-hover:text-(--color-accent) group-hover:scale-110 transition-all duration-300">
                     {project.index}
                   </span>
 
                   {/* Judul & Preview Tag */}
-                  <div>
+                  <div className="group-hover:translate-x-2 transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]">
                     <h3 className="font-display text-xl md:text-2xl text-(--color-text-primary) group-hover:text-(--color-accent) transition-colors leading-snug">
                       {project.title}
                     </h3>
@@ -279,7 +281,7 @@ export default function Works() {
                       {project.tags.slice(0, 3).map((tag) => (
                         <span
                           key={tag}
-                          className="font-sans text-[10px] tracking-wide text-(--color-text-muted) bg-black/[0.03] border border-(--color-border)/70 px-2.5 py-0.5 rounded-full"
+                          className="font-sans text-[10px] tracking-wide text-(--color-text-muted) bg-black/[0.03] border border-(--color-border)/70 px-2.5 py-0.5 rounded-full group-hover:border-(--color-accent)/40 transition-colors"
                         >
                           {tag}
                         </span>
@@ -293,7 +295,7 @@ export default function Works() {
                   </div>
 
                   {/* Tahun (Desktop) */}
-                  <span className="hidden md:block font-sans text-[12px] text-(--color-text-muted)">
+                  <span className="hidden md:block font-sans text-[12px] text-(--color-text-muted) group-hover:text-(--color-text-primary) transition-colors">
                     {project.year}
                   </span>
 
@@ -303,7 +305,7 @@ export default function Works() {
                       {isExpanded ? "Tutup" : "Preview"}
                     </span>
                     <span
-                      className={`w-8 h-8 rounded-full border border-(--color-border) flex items-center justify-center text-(--color-text-muted) group-hover:border-(--color-accent) group-hover:text-(--color-accent) transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                      className={`w-8 h-8 rounded-full border border-(--color-border) flex items-center justify-center text-(--color-text-muted) group-hover:scale-110 group-hover:border-(--color-accent) group-hover:text-(--color-accent) group-hover:bg-(--color-accent)/10 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
                         isExpanded ? "rotate-45 bg-(--color-accent) text-black border-(--color-accent)" : ""
                       }`}
                       aria-hidden="true"

@@ -76,10 +76,10 @@ export default function About() {
           </div>
         </div>
 
-        {/* Kanan — Kartu Kilas Perjalanan & Nilai (iOS Widget Aesthetic) */}
+        {/* Kanan — Kartu Kilas Perjalanan & Nilai (iOS Widget Aesthetic dengan Sheen & Lift) */}
         <div className="fade-up space-y-6">
           {/* Card 1: Sekilas Profil */}
-          <div className="border border-(--color-border)/80 p-7 bg-white/50 backdrop-blur-md rounded-2xl shadow-[0_4px_24px_rgba(0,0,0,0.03)]">
+          <div className="ios-sheen border border-(--color-border)/80 p-7 bg-white/60 backdrop-blur-md rounded-2xl shadow-[0_4px_24px_rgba(0,0,0,0.03)] hover:-translate-y-1.5 hover:shadow-[0_20px_40px_rgba(0,0,0,0.06)] hover:border-(--color-accent)/40 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]">
             <div className="flex items-center gap-2 mb-5">
               <span className="w-2 h-2 rounded-full bg-(--color-accent)" />
               <p className="font-sans text-[11px] font-medium tracking-[0.15em] uppercase text-(--color-accent)">
@@ -107,7 +107,7 @@ export default function About() {
           </div>
 
           {/* Card 2: Kutipan Nilai */}
-          <div className="border border-(--color-border)/80 p-6 bg-white/40 backdrop-blur-md rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.02)]">
+          <div className="ios-sheen border border-(--color-border)/80 p-6 bg-white/50 backdrop-blur-md rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.02)] hover:-translate-y-1.5 hover:shadow-[0_16px_36px_rgba(0,0,0,0.05)] hover:border-(--color-accent)/40 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]">
             <p className="font-sans text-[11px] font-medium tracking-widest uppercase text-(--color-text-muted) mb-2">
               Prinsip Kerja
             </p>

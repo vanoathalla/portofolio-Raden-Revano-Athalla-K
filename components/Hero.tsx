@@ -39,17 +39,6 @@ export default function Hero() {
 
         {/* Kiri — teks & foto mobile */}
         <div className="max-w-[680px]">
-          {/* iOS Dynamic Pill Badge */}
-          <div className="fade-up inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/70 border border-(--color-border)/80 backdrop-blur-md mb-6 shadow-[0_2px_10px_rgba(0,0,0,0.03)] select-none">
-            <span className="relative flex h-2 w-2">
-              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
-              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
-            </span>
-            <span className="font-sans text-[11px] font-medium tracking-wide text-(--color-text-primary)">
-              Informatika UPNVY · Terbuka untuk Kolaborasi
-            </span>
-          </div>
-
           <h1
             className="font-display font-normal leading-[1.08] text-(--color-text-primary) text-[36px] sm:text-[48px] md:text-[68px] tracking-tight"
             aria-label="Raden Revano Athalla Kartika"
@@ -58,9 +47,9 @@ export default function Hero() {
             <span className="hero-line block">Athalla Kartika.</span>
           </h1>
 
-          {/* Foto khusus Mobile (Tampil dengan bingkai squircle iOS) */}
+          {/* Foto khusus Mobile (Tampil dengan bingkai squircle iOS & animasi melayang) */}
           <div className="fade-up md:hidden my-6 flex justify-center">
-            <div className="relative w-[220px] sm:w-[260px] aspect-[3/4] overflow-hidden rounded-[26px] border border-(--color-border)/80 bg-white/60 p-1.5 backdrop-blur-md shadow-[0_12px_36px_rgba(0,0,0,0.06)]">
+            <div className="animate-float relative w-[220px] sm:w-[260px] aspect-[3/4] overflow-hidden rounded-[26px] border border-(--color-border)/80 bg-white/60 p-1.5 backdrop-blur-md shadow-[0_12px_36px_rgba(0,0,0,0.08)] transition-transform duration-500 hover:scale-[1.02]">
               <img
                 src="/foto-profil.jpg"
                 alt="Raden Revano Athalla Kartika"
@@ -95,9 +84,9 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Kanan — foto (desktop view dengan bingkai squircle iOS) */}
+        {/* Kanan — foto (desktop view dengan bingkai squircle iOS & animasi melayang halus) */}
         <div className="fade-up hidden md:block shrink-0">
-          <div className="relative w-[340px] lg:w-[420px] aspect-[3/4] overflow-hidden rounded-[32px] border border-(--color-border)/80 bg-white/60 p-2 backdrop-blur-md shadow-[0_20px_50px_rgba(0,0,0,0.07)]">
+          <div className="animate-float relative w-[340px] lg:w-[420px] aspect-[3/4] overflow-hidden rounded-[32px] border border-(--color-border)/80 bg-white/60 p-2 backdrop-blur-md shadow-[0_20px_50px_rgba(0,0,0,0.08)] transition-all duration-500 hover:scale-[1.02] hover:shadow-[0_30px_70px_rgba(0,0,0,0.12)]">
             <img
               src="/foto-profil.jpg"
               alt="Raden Revano Athalla Kartika"

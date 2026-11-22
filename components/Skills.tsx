@@ -210,15 +210,15 @@ export default function Skills() {
           </h2>
         </div>
 
-        {/* Grid Skill & Tech Stack (iOS Frosted Widgets) */}
+        {/* Grid Skill & Tech Stack (iOS Frosted Widgets dengan Sheen & Lift) */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-20">
           {skillGroups.map(({ category, items }) => (
             <div
               key={category}
-              className="fade-up bg-white/50 backdrop-blur-md p-6 sm:p-7 rounded-2xl border border-(--color-border)/80 shadow-[0_4px_20px_rgba(0,0,0,0.02)] hover:bg-white/85 hover:shadow-[0_8px_30px_rgba(0,0,0,0.04)] transition-all duration-300 group"
+              className="fade-up ios-sheen bg-white/60 backdrop-blur-md p-6 sm:p-7 rounded-2xl border border-(--color-border)/80 shadow-[0_4px_20px_rgba(0,0,0,0.03)] hover:-translate-y-2 hover:shadow-[0_20px_40px_rgba(0,0,0,0.06)] hover:border-(--color-accent)/40 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group"
             >
               <div className="flex items-center gap-2 mb-5">
-                <span className="w-1.5 h-1.5 rounded-full bg-(--color-accent)" />
+                <span className="w-1.5 h-1.5 rounded-full bg-(--color-accent) group-hover:scale-125 transition-transform duration-200" />
                 <p className="font-sans text-[11px] font-medium tracking-[0.15em] uppercase text-(--color-accent)">
                   {category}
                 </p>
@@ -227,7 +227,7 @@ export default function Skills() {
                 {items.map((item) => (
                   <li
                     key={item}
-                    className="font-sans font-light text-(--color-text-primary) text-sm flex items-center gap-2"
+                    className="font-sans font-light text-(--color-text-primary) text-sm flex items-center gap-2 group-hover:translate-x-1 transition-transform duration-200"
                   >
                     <span className="text-[10px] text-(--color-text-muted) group-hover:text-(--color-accent) transition-colors">▹</span>
                     {item}
@@ -262,14 +262,16 @@ export default function Skills() {
                   <button
                     type="button"
                     onClick={() => toggleExp(exp.id)}
-                    className={`w-full py-5 md:py-6 text-left grid grid-cols-1 md:grid-cols-[1.5fr_1fr_auto] items-center gap-3 md:gap-6 group active:scale-[0.99] transition-all duration-200 ${
-                      isExpanded ? "bg-white/40 backdrop-blur-sm rounded-xl px-3 -mx-3" : "hover:bg-white/20"
+                    className={`w-full py-5 md:py-6 text-left grid grid-cols-1 md:grid-cols-[1.5fr_1fr_auto] items-center gap-3 md:gap-6 group active:scale-[0.98] transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                      isExpanded
+                        ? "bg-white/60 backdrop-blur-md rounded-2xl px-4 -mx-4 shadow-[0_4px_24px_rgba(0,0,0,0.03)] border border-(--color-border)/70"
+                        : "hover:bg-white/40 hover:rounded-2xl hover:px-4 hover:-mx-4 hover:shadow-[0_4px_16px_rgba(0,0,0,0.02)]"
                     }`}
                     aria-expanded={isExpanded}
                   >
                     {/* Peran & Lembaga */}
-                    <div className="flex items-baseline gap-3">
-                      <span className="w-1.5 h-1.5 rounded-full bg-(--color-accent) shrink-0 translate-y-[-2px]" aria-hidden="true" />
+                    <div className="flex items-baseline gap-3 group-hover:translate-x-2 transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]">
+                      <span className="w-1.5 h-1.5 rounded-full bg-(--color-accent) shrink-0 translate-y-[-2px] group-hover:scale-125 transition-transform duration-200" aria-hidden="true" />
                       <div>
                         <span className="font-display text-lg md:text-xl text-(--color-text-primary) group-hover:text-(--color-accent) transition-colors">
                           {exp.role}
@@ -283,7 +285,7 @@ export default function Skills() {
 
                     {/* Tipe & Periode */}
                     <div className="flex items-center gap-3 pl-4 md:pl-0">
-                      <span className="font-sans text-[10px] tracking-wide uppercase text-(--color-text-muted) bg-black/[0.03] border border-(--color-border)/70 px-2.5 py-0.5 rounded-full">
+                      <span className="font-sans text-[10px] tracking-wide uppercase text-(--color-text-muted) bg-black/[0.03] border border-(--color-border)/70 px-2.5 py-0.5 rounded-full group-hover:border-(--color-accent)/40 transition-colors">
                         {exp.type}
                       </span>
                       <span className="font-sans text-[12px] text-(--color-text-muted)">
@@ -294,7 +296,7 @@ export default function Skills() {
                     {/* Indikator Expand */}
                     <div className="flex items-center justify-end pr-2">
                       <span
-                        className={`w-7 h-7 rounded-full border border-(--color-border) flex items-center justify-center text-[13px] text-(--color-text-muted) group-hover:border-(--color-accent) group-hover:text-(--color-accent) transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                        className={`w-7 h-7 rounded-full border border-(--color-border) flex items-center justify-center text-[13px] text-(--color-text-muted) group-hover:scale-110 group-hover:border-(--color-accent) group-hover:text-(--color-accent) group-hover:bg-(--color-accent)/10 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
                           isExpanded ? "rotate-45 bg-(--color-accent) text-black border-(--color-accent)" : ""
                         }`}
                         aria-hidden="true"

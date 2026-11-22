@@ -112,35 +112,79 @@ body {
 @keyframes ambient-glow {
   0%, 100% {
     transform: translate(0, 0) scale(1);
-    opacity: 0.16;
+    opacity: 0.22;
   }
   50% {
-    transform: translate(20px, -20px) scale(1.08);
-    opacity: 0.26;
+    transform: translate(25px, -25px) scale(1.12);
+    opacity: 0.38;
   }
 }
 
 .animate-ambient {
-  animation: ambient-glow 16s ease-in-out infinite alternate;
+  animation: ambient-glow 14s ease-in-out infinite alternate;
 }
 
-/* ─── Fade-up scroll animation ──────────────────────────────── */
+/* Floating animation for photo portrait */
+@keyframes float-gentle {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(0.6deg);
+  }
+}
+
+.animate-float {
+  animation: float-gentle 5.5s ease-in-out infinite;
+}
+
+/* Apple specular reflection sheen on cards */
+.ios-sheen {
+  position: relative;
+  overflow: hidden;
+}
+
+.ios-sheen::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    60deg,
+    transparent 42%,
+    rgba(255, 255, 255, 0.45) 50%,
+    transparent 58%
+  );
+  transform: translateX(-100%) rotate(25deg);
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+
+.ios-sheen:hover::after {
+  transform: translateX(100%) rotate(25deg);
+}
+
+/* ─── Fade-up scroll animation (prominent, silky spring) ────── */
 .fade-up {
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(34px) scale(0.985);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
 }
 
 .fade-up.visible {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
 }
 
 /* Hero lines animate with iOS curve */
 .hero-line {
   opacity: 0;
-  transform: translateY(14px);
-  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(24px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
 }
 
 .hero-line.visible {

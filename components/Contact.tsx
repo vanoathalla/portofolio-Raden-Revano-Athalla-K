@@ -42,7 +42,7 @@ export default function Contact() {
 
       <div className="max-w-[680px] mx-auto text-center">
         {/* iOS Card Container */}
-        <div className="bg-white/60 backdrop-blur-xl border border-(--color-border)/80 rounded-3xl p-8 sm:p-12 shadow-[0_12px_40px_rgba(0,0,0,0.03)]">
+        <div className="ios-sheen bg-white/60 backdrop-blur-xl border border-(--color-border)/80 rounded-3xl p-8 sm:p-12 shadow-[0_12px_40px_rgba(0,0,0,0.03)] hover:shadow-[0_24px_50px_rgba(0,0,0,0.06)] hover:border-(--color-accent)/30 transition-all duration-300">
           <p className="fade-up font-sans text-[11px] font-medium tracking-[0.18em] uppercase text-(--color-accent) mb-4">
             Kontak &amp; Komunikasi
           </p>
