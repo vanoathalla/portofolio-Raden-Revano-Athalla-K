@@ -259,7 +259,7 @@ export default function Skills() {
                   <button
                     type="button"
                     onClick={() => toggleExp(exp.id)}
-                    className={`w-full py-5 md:py-6 text-left grid grid-cols-1 md:grid-cols-[1.5fr_1fr_auto] items-center gap-3 md:gap-6 group active:scale-[0.98] transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                    className={`w-full py-5 md:py-6 text-left grid grid-cols-1 md:grid-cols-[1.5fr_1fr_auto] items-center gap-3 md:gap-6 group transition-all duration-300 ease-[cubic-bezier(0.25,0.1,0.25,1)] ${
                       isExpanded
                         ? "bg-white/60 backdrop-blur-md rounded-2xl px-4 -mx-4 shadow-[0_4px_24px_rgba(0,0,0,0.03)] border border-(--color-border)/70"
                         : "hover:bg-white/40 hover:rounded-2xl hover:px-4 hover:-mx-4 hover:shadow-[0_4px_16px_rgba(0,0,0,0.02)]"
@@ -267,8 +267,8 @@ export default function Skills() {
                     aria-expanded={isExpanded}
                   >
                     {/* Peran & Lembaga */}
-                    <div className="flex items-baseline gap-3 group-hover:translate-x-2 transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]">
-                      <span className="w-1.5 h-1.5 rounded-full bg-(--color-accent) shrink-0 translate-y-[-2px] group-hover:scale-125 transition-transform duration-200" aria-hidden="true" />
+                    <div className="flex items-baseline gap-3 group-hover:translate-x-1.5 transition-transform duration-300 ease-[cubic-bezier(0.25,0.1,0.25,1)]">
+                      <span className="w-1.5 h-1.5 rounded-full bg-(--color-accent) shrink-0 translate-y-[-2px] transition-colors duration-200" aria-hidden="true" />
                       <div>
                         <span className="font-display text-lg md:text-xl text-(--color-text-primary) group-hover:text-(--color-accent) transition-colors">
                           {exp.role}
@@ -293,7 +293,7 @@ export default function Skills() {
                     {/* Indikator Expand */}
                     <div className="flex items-center justify-end pr-2">
                       <span
-                        className={`w-7 h-7 rounded-full border border-(--color-border) flex items-center justify-center text-[13px] text-(--color-text-muted) group-hover:scale-110 group-hover:border-(--color-accent) group-hover:text-(--color-accent) group-hover:bg-(--color-accent)/10 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                        className={`w-7 h-7 rounded-full border border-(--color-border) flex items-center justify-center text-[13px] text-(--color-text-muted) group-hover:border-(--color-accent) group-hover:text-(--color-accent) group-hover:bg-(--color-accent)/10 transition-all duration-300 ease-[cubic-bezier(0.25,0.1,0.25,1)] ${
                           isExpanded ? "rotate-45 bg-(--color-accent) text-black border-(--color-accent)" : ""
                         }`}
                         aria-hidden="true"
@@ -311,7 +311,7 @@ export default function Skills() {
                         initial={{ height: 0, opacity: 0 }}
                         animate={{ height: "auto", opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
-                        transition={{ type: "spring", stiffness: 280, damping: 28, mass: 0.8 }}
+                        transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
                         className="overflow-hidden bg-white/50 backdrop-blur-md border border-(--color-border)/80 rounded-2xl my-3 shadow-[0_8px_24px_rgba(0,0,0,0.03)]"
                       >
                         <div className="p-6 md:p-8 pl-8 md:pl-10">

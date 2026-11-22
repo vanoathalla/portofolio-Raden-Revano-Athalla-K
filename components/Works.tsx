@@ -257,7 +257,7 @@ export default function Works() {
                 <button
                   type="button"
                   onClick={() => toggleProject(project.id)}
-                  className={`w-full py-5 md:py-6 text-left grid grid-cols-[36px_1fr_auto] md:grid-cols-[56px_1fr_auto_auto] items-center gap-3 sm:gap-4 md:gap-8 group active:scale-[0.98] transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                  className={`w-full py-5 md:py-6 text-left grid grid-cols-[36px_1fr_auto] md:grid-cols-[56px_1fr_auto_auto] items-center gap-3 sm:gap-4 md:gap-8 group transition-all duration-300 ease-[cubic-bezier(0.25,0.1,0.25,1)] ${
                     isExpanded
                       ? "bg-white/60 backdrop-blur-md rounded-2xl px-4 -mx-4 shadow-[0_4px_24px_rgba(0,0,0,0.03)] border border-(--color-border)/70"
                       : "hover:bg-white/40 hover:rounded-2xl hover:px-4 hover:-mx-4 hover:shadow-[0_4px_16px_rgba(0,0,0,0.02)]"
@@ -265,12 +265,12 @@ export default function Works() {
                   aria-expanded={isExpanded}
                 >
                   {/* Nomor Indeks */}
-                  <span className="font-sans text-[12px] font-mono tracking-wider text-(--color-text-muted) group-hover:text-(--color-accent) group-hover:scale-110 transition-all duration-300">
+                  <span className="font-sans text-[12px] font-mono tracking-wider text-(--color-text-muted) group-hover:text-(--color-accent) transition-colors duration-300">
                     {project.index}
                   </span>
 
                   {/* Judul & Preview Tag */}
-                  <div className="group-hover:translate-x-2 transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)]">
+                  <div className="group-hover:translate-x-1.5 transition-transform duration-300 ease-[cubic-bezier(0.25,0.1,0.25,1)]">
                     <h3 className="font-display text-xl md:text-2xl text-(--color-text-primary) group-hover:text-(--color-accent) transition-colors leading-snug">
                       {project.title}
                     </h3>
@@ -302,7 +302,7 @@ export default function Works() {
                       {isExpanded ? "Tutup" : "Preview"}
                     </span>
                     <span
-                      className={`w-8 h-8 rounded-full border border-(--color-border) flex items-center justify-center text-(--color-text-muted) group-hover:scale-110 group-hover:border-(--color-accent) group-hover:text-(--color-accent) group-hover:bg-(--color-accent)/10 transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                      className={`w-8 h-8 rounded-full border border-(--color-border) flex items-center justify-center text-(--color-text-muted) group-hover:border-(--color-accent) group-hover:text-(--color-accent) group-hover:bg-(--color-accent)/10 transition-all duration-300 ease-[cubic-bezier(0.25,0.1,0.25,1)] ${
                         isExpanded ? "rotate-45 bg-(--color-accent) text-black border-(--color-accent)" : ""
                       }`}
                       aria-hidden="true"
@@ -320,7 +320,7 @@ export default function Works() {
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: "auto", opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
-                      transition={{ type: "spring", stiffness: 280, damping: 28, mass: 0.8 }}
+                      transition={{ duration: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
                       className="overflow-hidden bg-white/50 backdrop-blur-md border border-(--color-border)/80 rounded-2xl my-3 shadow-[0_8px_30px_rgba(0,0,0,0.03)]"
                     >
                       <div className="p-6 md:p-10 grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-8 md:gap-12 items-start">
@@ -409,7 +409,7 @@ export default function Works() {
                                 href={project.link}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="w-full sm:w-auto text-center inline-flex items-center justify-center gap-2 font-sans text-[12px] font-medium tracking-wide uppercase bg-(--color-text-primary) text-(--color-base) px-6 py-2.5 rounded-full hover:opacity-90 active:scale-[0.97] transition-all duration-200"
+                                className="w-full sm:w-auto text-center inline-flex items-center justify-center gap-2 font-sans text-[12px] font-medium tracking-wide uppercase bg-(--color-text-primary) text-(--color-base) px-6 py-2.5 rounded-full hover:opacity-90 transition-opacity duration-200"
                               >
                                 Buka Website Live
                                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
@@ -422,7 +422,7 @@ export default function Works() {
                                 href={project.repoLink}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="w-full sm:w-auto text-center inline-flex items-center justify-center gap-2 font-sans text-[12px] font-medium tracking-wide uppercase border border-(--color-border)/80 bg-white/50 backdrop-blur-sm text-(--color-text-primary) px-6 py-2.5 rounded-full hover:bg-white/80 active:scale-[0.97] transition-all duration-200"
+                                className="w-full sm:w-auto text-center inline-flex items-center justify-center gap-2 font-sans text-[12px] font-medium tracking-wide uppercase border border-(--color-border)/80 bg-white/50 backdrop-blur-sm text-(--color-text-primary) px-6 py-2.5 rounded-full hover:bg-white/80 transition-colors duration-200"
                               >
                                 Source Code GitHub
                                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
@@ -447,7 +447,7 @@ export default function Works() {
             href="https://github.com/vanoathalla?tab=repositories"
             target="_blank"
             rel="noopener noreferrer"
-            className="group inline-flex items-center gap-2 font-sans text-[12px] tracking-[0.14em] uppercase text-(--color-text-muted) hover:text-(--color-text-primary) transition-colors py-2 px-3 active:scale-[0.98]"
+            className="group inline-flex items-center gap-2 font-sans text-[12px] tracking-[0.14em] uppercase text-(--color-text-muted) hover:text-(--color-text-primary) transition-colors py-2 px-3"
           >
             <span>Koleksi kode lainnya di GitHub</span>
             <span className="text-(--color-accent) transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-1">→</span>

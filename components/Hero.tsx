@@ -69,14 +69,14 @@ export default function Hero() {
             <a
               href="#work"
               onClick={(e) => { e.preventDefault(); document.getElementById("work")?.scrollIntoView({ behavior: "smooth" }); }}
-              className="inline-flex items-center justify-center font-sans text-[12px] font-medium tracking-[0.08em] uppercase rounded-full bg-(--color-text-primary) text-(--color-base) px-7 py-3.5 shadow-sm hover:opacity-90 active:scale-[0.97] transition-all duration-200"
+              className="inline-flex items-center justify-center font-sans text-[12px] font-medium tracking-[0.08em] uppercase rounded-full bg-(--color-text-primary) text-(--color-base) px-7 py-3.5 shadow-sm hover:opacity-90 transition-opacity duration-200"
             >
               Lihat Proyek
             </a>
             <a
               href="#contact"
               onClick={(e) => { e.preventDefault(); document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" }); }}
-              className="group inline-flex items-center justify-center font-sans text-[12px] font-medium tracking-[0.08em] uppercase rounded-full border border-(--color-border) bg-white/50 backdrop-blur-md text-(--color-text-primary) px-7 py-3.5 hover:bg-white/80 active:scale-[0.97] transition-all duration-200"
+              className="group inline-flex items-center justify-center font-sans text-[12px] font-medium tracking-[0.08em] uppercase rounded-full border border-(--color-border) bg-white/50 backdrop-blur-md text-(--color-text-primary) px-7 py-3.5 hover:bg-white/80 transition-colors duration-200"
             >
               Hubungi Saya
               <span className="ml-1.5 transition-transform duration-200 group-hover:translate-x-0.5">→</span>
@@ -86,7 +86,7 @@ export default function Hero() {
 
         {/* Kanan — foto (desktop view dengan bingkai squircle iOS & animasi melayang halus) */}
         <div className="fade-up hidden md:block shrink-0">
-          <div className="animate-float relative w-[340px] lg:w-[420px] aspect-[3/4] overflow-hidden rounded-[32px] border border-(--color-border)/80 bg-white/60 p-2 backdrop-blur-md shadow-[0_20px_50px_rgba(0,0,0,0.08)] transition-all duration-500 hover:scale-[1.02] hover:shadow-[0_30px_70px_rgba(0,0,0,0.12)]">
+          <div className="animate-float relative w-[340px] lg:w-[420px] aspect-[3/4] overflow-hidden rounded-[32px] border border-(--color-border)/80 bg-white/60 p-2 backdrop-blur-md shadow-[0_20px_50px_rgba(0,0,0,0.08)] hover:shadow-[0_28px_60px_rgba(0,0,0,0.12)] transition-shadow duration-500">
             <img
               src="/foto-profil.jpg"
               alt="Raden Revano Athalla Kartika"
