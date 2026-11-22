@@ -64,8 +64,7 @@ export default function About() {
             <p className="fade-up font-sans font-light text-[16px] text-(--color-text-muted) leading-relaxed">
               Jiwa kepemimpinan dari lapangan hijau membawa saya dipercaya memimpin sebagai <strong>Ketua Pelaksana IF CUP 2024</strong> —
               turnamen olahraga bergengsi jurusan Informatika, mengoordinasi puluhan panitia lintas divisi, dan memastikan acara
-              berjalan lancar. Pengalaman lapangan ini juga berlanjut saat dipercaya menjadi <strong>Volunteer Guard Veteran Cup Festival (2025 &amp; 2026)</strong> mengawal
-              keamanan dan alur pengunjung festival akbar kampus. Bahkan, kecintaan pada sepak bola turut menginspirasi proyek teknologi saya, seperti riset machine learning
+              berjalan lancar. Pengalaman ini berlanjut saat dipercaya menjadi <strong>Volunteer Guard Veteran Cup Festival 2025</strong> dalam pengamanan crowd management dan dipercaya kembali di <strong>Divisi Dekorasi Veteran Cup Festival 2026</strong> dalam penataan visual artistik panggung festival kampus. Bahkan, kecintaan pada sepak bola turut menginspirasi proyek teknologi saya, seperti riset machine learning
               klasifikasi performa pemain PSS Sleman hingga platform pre-order jersey PO-in Aja.
             </p>
 
@@ -87,7 +86,7 @@ export default function About() {
               {[
                 { title: "Pendidikan", desc: "S-1 Teknik Informatika, UPN 'Veteran' Yogyakarta (2023)" },
                 { title: "Latar Belakang", desc: "Mantan Atlet Sepak Bola Muda · Kini Penggemar Futsal & Bola" },
-                { title: "Pengalaman Utama", desc: "Ketua Pelaksana IF CUP 2024 · Volunteer Guard Veteran Cup 2025/2026" },
+                { title: "Pengalaman Utama", desc: "Ketua Pelaksana IF CUP 2024 · Panitia & Volunteer Veteran Cup 2025 & 2026" },
                 { title: "Fokus Teknis", desc: "Web Development, Mobile App (Flutter), & Data Exploration" },
                 { title: "Domisili", desc: "Yogyakarta, Indonesia" },
               ].map((item) => (

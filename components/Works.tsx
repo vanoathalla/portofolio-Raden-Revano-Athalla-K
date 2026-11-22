@@ -404,13 +404,13 @@ export default function Works() {
                           </div>
 
                           {/* Tombol Akses */}
-                          <div className="flex flex-wrap items-center gap-4 pt-4 border-t border-(--color-border)">
+                          <div className="flex flex-wrap items-center gap-3 pt-4 border-t border-(--color-border)">
                             {isLive && (
                               <a
                                 href={project.link}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center gap-2 font-sans text-[12px] tracking-wider uppercase bg-(--color-text-primary) text-(--color-base) px-5 py-2.5 rounded hover:bg-(--color-accent) hover:text-black transition-colors duration-200"
+                                className="w-full sm:w-auto text-center inline-flex items-center justify-center gap-2 font-sans text-[12px] tracking-wider uppercase bg-(--color-text-primary) text-(--color-base) px-5 py-3 sm:py-2.5 rounded hover:bg-(--color-accent) hover:text-black transition-colors duration-200"
                               >
                                 Buka Website Live
                                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
@@ -423,11 +423,11 @@ export default function Works() {
                                 href={project.repoLink}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="inline-flex items-center gap-2 font-sans text-[12px] tracking-wider uppercase border border-(--color-border) text-(--color-text-primary) px-5 py-2.5 rounded hover:border-(--color-accent) hover:text-(--color-accent) transition-colors duration-200"
+                                className="w-full sm:w-auto text-center inline-flex items-center justify-center gap-2 font-sans text-[12px] tracking-wider uppercase border border-(--color-border) text-(--color-text-primary) px-5 py-3 sm:py-2.5 rounded hover:border-(--color-accent) hover:text-(--color-accent) transition-colors duration-200"
                               >
                                 Source Code GitHub
                                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-                                  <path d="M2 10L10 2H4M10 2V8" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
+                                  <path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
                                 </svg>
                               </a>
                             )}

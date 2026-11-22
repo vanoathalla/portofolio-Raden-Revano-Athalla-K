@@ -48,10 +48,24 @@ const experiences: ExperienceItem[] = [
     ],
   },
   {
-    id: "veteran-cup",
+    id: "veteran-cup-2026",
+    role: "Divisi Dekorasi & Artistik",
+    org: "Veteran Cup Festival 2026 — UPN “Veteran” Yogyakarta",
+    period: "2026",
+    type: "Kepanitiaan Festival",
+    summary:
+      "Bertanggung jawab dalam perancangan konsep visual panggung, instalasi dekorasi venue, serta penataan artistik area festival olahraga akbar kampus.",
+    highlights: [
+      "Merancang konsep visual, tata panggung utama, dan instalasi dekorasi venue festival.",
+      "Mengoordinasikan penataan layout booth, area photobooth, dan signage visual pengunjung.",
+      "Bekerja sama lintas divisi untuk menciptakan atmosfer festival yang megah, rapi, dan berkesan.",
+    ],
+  },
+  {
+    id: "veteran-cup-2025",
     role: "Volunteer & Event Guard",
-    org: "Veteran Cup Festival 2025 & 2026 — UPN “Veteran” Yogyakarta",
-    period: "Sep 2025 & 2026",
+    org: "Veteran Cup Festival 2025 — UPN “Veteran” Yogyakarta",
+    period: "Sep 2025",
     type: "Volunteer Event Akbar",
     summary:
       "Bertindak sebagai guard pengamanan dan operasional crowd management dalam festival olahraga tahunan akbar kampus yang dihadiri ribuan penonton dan mahasiswa.",
