@@ -149,13 +149,13 @@ const experiences: ExperienceItem[] = [
     id: "remaja-masjid",
     role: "Sekretaris",
     org: "Remaja Masjid Babul Choir",
-    period: "Sep 2024 – Sekarang",
+    period: "Sep 2024 – Jun 2025",
     type: "Pengabdian Masyarakat",
     summary:
-      "Menjalankan fungsi administrasi, persuratan, dan dokumentasi kegiatan kepemudaan sosial keagamaan di lingkungan masyarakat.",
+      "Menjalankan fungsi administrasi, persuratan, dan dokumentasi kegiatan kepemudaan sosial keagamaan hingga rangkaian hari raya Idul Adha di lingkungan masyarakat.",
     highlights: [
-      "Menyusun proposal dan laporan pertanggungjawaban (LPJ) kegiatan sosial kepemudaan.",
-      "Mendokumentasikan arsip keputusan rapat serta memelihara database keanggotaan.",
+      "Menyusun proposal dan laporan pertanggungjawaban (LPJ) kegiatan sosial kepemudaan serta perayaan hari besar Islam.",
+      "Mendokumentasikan arsip keputusan rapat serta memelihara database keanggotaan pemuda.",
       "Menggerakkan partisipasi pemuda sekitar dalam kegiatan sosial dan kemasyarakatan.",
     ],
   },
