@@ -48,9 +48,23 @@ const experiences: ExperienceItem[] = [
     ],
   },
   {
+    id: "veteran-cup",
+    role: "Volunteer & Event Guard",
+    org: "Veteran Cup Festival 2025 & 2026 — UPN “Veteran” Yogyakarta",
+    period: "Sep 2025 & 2026",
+    type: "Volunteer Event Akbar",
+    summary:
+      "Bertindak sebagai guard pengamanan dan operasional crowd management dalam festival olahraga tahunan akbar kampus yang dihadiri ribuan penonton dan mahasiswa.",
+    highlights: [
+      "Mengontrol alur crowd management dan sterilisasi akses masuk pintu utama venue festival.",
+      "Mengawasi keamanan venue pertandingan dan berkoordinasi langsung dengan tim keamanan universitas.",
+      "Sigap mengantisipasi potensi kerumunan, jalur evakuasi, dan situasi darurat selama rangkaian festival berlangsung.",
+    ],
+  },
+  {
     id: "ukm-sepak-bola",
     role: "Staff Divisi Sepak Bola",
-    org: "UKM Sepak Bola UPN &ldquo;Veteran&rdquo; Yogyakarta",
+    org: "UKM Sepak Bola UPN “Veteran” Yogyakarta",
     period: "Jan 2024 – Feb 2025",
     type: "Organisasi Olahraga Kampus",
     summary:
@@ -87,6 +101,20 @@ const experiences: ExperienceItem[] = [
       "Menyelenggarakan sesi latihan bersama futsal dan olahraga rutin bagi mahasiswa Informatika.",
       "Menjadi jembatan koordinasi atlet jurusan untuk kejuaraan tingkat fakultas dan universitas.",
       "Mendukung berbagai agenda internal himpunan dengan semangat kolaboratif.",
+    ],
+  },
+  {
+    id: "thanks-party",
+    role: "Penanggung Jawab Perlengkapan",
+    org: "Thanks Party Teknik Informatika UPNVY",
+    period: "Feb – Mar 2024",
+    type: "Kepanitiaan Jurusan",
+    summary:
+      "Memimpin divisi logistik dalam pengadaan dan kesiapan seluruh peralatan panggung serta kelistrikan acara apresiasi mahasiswa Informatika.",
+    highlights: [
+      "Mengoordinasikan inventarisasi dan kebutuhan perlengkapan panggung serta tata suara lintas divisi.",
+      "Memastikan seluruh kelistrikan, instrumen, dan tata panggung siap pakai tepat waktu dan aman.",
+      "Mengawasi alur bongkar-muat barang dan sterilisasi venue paska acara selesai.",
     ],
   },
   {

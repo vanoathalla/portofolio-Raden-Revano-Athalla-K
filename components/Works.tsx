@@ -13,6 +13,7 @@ interface ProjectItem {
   link?: string;
   repoLink?: string;
   image?: string | null;
+  features?: string[];
 }
 
 const projects: ProjectItem[] = [
@@ -27,10 +28,24 @@ const projects: ProjectItem[] = [
     link: "https://github.com/vanoathalla/presensi-magang",
     repoLink: "https://github.com/vanoathalla/presensi-magang",
     image: "/projects/sip-magang.png",
+    features: ["Validasi Radius GPS Real-time", "Multi-role Admin & Peserta", "Rekapitulasi Data Kehadiran Otomatis"],
+  },
+  {
+    id: "transjogja",
+    index: "02",
+    title: "Trans Jogja Navigator — Rute & Halte Bus",
+    tags: ["JavaScript", "Leaflet GIS", "Geolocation", "Web App"],
+    description:
+      "Sistem navigasi cerdas berbasis web untuk memandu pengguna Trans Jogja keliling kota. Mendeteksi halte terdekat berdasarkan koordinat GPS perangkat secara instan dan menampilkan rute tercepat antar koridor tanpa perlu login atau instalasi aplikasi rumit. Sudah live dan digunakan publik.",
+    year: "2024",
+    link: "https://transjogjanavigator.vercel.app",
+    repoLink: "https://github.com/vanoathalla/transjogja-navigator",
+    image: null,
+    features: ["Pencarian Halte Terdekat via GPS", "Navigasi Antar Koridor Cepat", "Ringan & Siap Pakai Tanpa Login"],
   },
   {
     id: "po-in-aja",
-    index: "02",
+    index: "03",
     title: "PO-in Aja — Pre-Order Jersey & Merchandise Platform",
     tags: ["Laravel 11", "Livewire 3", "Tailwind CSS", "MySQL"],
     description:
@@ -39,18 +54,7 @@ const projects: ProjectItem[] = [
     link: "https://github.com/vanoathalla/po-in-aja",
     repoLink: "https://github.com/vanoathalla/po-in-aja",
     image: null,
-  },
-  {
-    id: "terserah-app",
-    index: "03",
-    title: "TERSERAH! — Tongkrongan Decision Roulette",
-    tags: ["SvelteKit", "TypeScript", "Tailwind CSS", "Railway"],
-    description:
-      "Solusi pemecah kebuntuan circle tongkrongan saat bingung menentukan tempat makan atau destinasi kumpul. Dibangun menggunakan SvelteKit yang sangat ringan dan cepat, lengkap dengan animasi roulette putar acak dan opsi kustomisasi daftar pilihan.",
-    year: "2024",
-    link: "https://terserah-app-production.up.railway.app",
-    repoLink: "https://github.com/vanoathalla/terserah-app",
-    image: "/projects/terserah.png",
+    features: ["Sistem Pre-order & Custom Name", "Dashboard Rekapitulasi Otomatis", "Desain Bersih iOS Aesthetic"],
   },
   {
     id: "aplikasi-perminyakan",
@@ -62,11 +66,25 @@ const projects: ProjectItem[] = [
     year: "2024",
     link: "https://github.com/vanoathalla/aplikasi-perminyakan",
     repoLink: "https://github.com/vanoathalla/aplikasi-perminyakan",
-    image: "/projects/perminyakan.png",
+    image: null,
+    features: ["Kalkulasi Decline Rate & Produksi", "Proyeksi Cash Flow 20 Tahun", "Visualisasi Grafik Finansial Interaktif"],
+  },
+  {
+    id: "terserah-app",
+    index: "05",
+    title: "TERSERAH! — Tongkrongan Decision Roulette",
+    tags: ["SvelteKit", "TypeScript", "Tailwind CSS", "Railway"],
+    description:
+      "Solusi pemecah kebuntuan circle tongkrongan saat bingung menentukan tempat makan atau destinasi kumpul. Dibangun menggunakan SvelteKit yang sangat ringan dan cepat, lengkap dengan animasi roulette putar acak dan opsi kustomisasi daftar pilihan.",
+    year: "2024",
+    link: "https://terserah-app-production.up.railway.app",
+    repoLink: "https://github.com/vanoathalla/terserah-app",
+    image: "/projects/terserah.png",
+    features: ["Animasi Putar Roulette Dinamis", "Input Kategori Kuliner & Tongkrongan", "Deployed Live di Cloud Railway"],
   },
   {
     id: "performa-pemain",
-    index: "05",
+    index: "06",
     title: "Klasifikasi Performa Pemain Sepak Bola — Random Forest",
     tags: ["Python", "Machine Learning", "Scikit-Learn", "Pandas"],
     description:
@@ -75,18 +93,7 @@ const projects: ProjectItem[] = [
     link: "https://github.com/vanoathalla/performa-pemain",
     repoLink: "https://github.com/vanoathalla/performa-pemain",
     image: "/projects/performa-pemain.png",
-  },
-  {
-    id: "transjogja",
-    index: "06",
-    title: "Trans Jogja Navigator — Rute & Halte Bus",
-    tags: ["JavaScript", "Leaflet GIS", "Geolocation", "Web App"],
-    description:
-      "Sistem navigasi cerdas berbasis web untuk memandu pengguna Trans Jogja keliling kota. Mendeteksi halte terdekat berdasarkan koordinat GPS perangkat dan menampilkan rute tercepat antar koridor tanpa perlu login atau instalasi aplikasi.",
-    year: "2024",
-    link: "https://transjogjanavigator.vercel.app",
-    repoLink: "https://github.com/vanoathalla/transjogja-navigator",
-    image: "/projects/transjogja.png",
+    features: ["Dataset Statistik PSS Sleman 2024/2025", "Klasifikasi Algoritma Random Forest", "Visualisasi Confusion Matrix & Evaluasi"],
   },
   {
     id: "mykarisma",
@@ -99,6 +106,7 @@ const projects: ProjectItem[] = [
     link: "https://github.com/vanoathalla/mykarisma",
     repoLink: "https://github.com/vanoathalla/mykarisma",
     image: "/projects/mykarisma.png",
+    features: ["Pencatatan Kas Lokal SQLite", "Jadwal & Agenda Organisasi", "Integrasi Peta Lokasi Acara"],
   },
   {
     id: "jgn-lupa-app",
@@ -111,6 +119,7 @@ const projects: ProjectItem[] = [
     link: "https://github.com/vanoathalla/jgn-lupa-app",
     repoLink: "https://github.com/vanoathalla/jgn-lupa-app",
     image: null,
+    features: ["Multi-platform Desktop & Android", "Background Alarm & Notifikasi", "Sinkronisasi To-Do List Harian"],
   },
   {
     id: "webcraft-pos",
@@ -123,6 +132,7 @@ const projects: ProjectItem[] = [
     link: "https://website-kasir.infinityfreeapp.com",
     repoLink: "https://github.com/vanoathalla/webcraft-pos",
     image: "/projects/webcraft-pos.png",
+    features: ["Transaksi Kasir Instan", "Manajemen Inventaris Stok Otomatis", "Pencetakan Struk Pembayaran"],
   },
   {
     id: "counselink",
@@ -135,6 +145,7 @@ const projects: ProjectItem[] = [
     link: "https://github.com/vanoathalla/counselink",
     repoLink: "https://github.com/vanoathalla/counselink",
     image: "/projects/counselink.png",
+    features: ["Booking Jadwal Konselor Online", "Manajemen Rekam Catatan Konseling", "Portal Multi-role Pasien & Konselor"],
   },
   {
     id: "batik-gumregah",
@@ -147,6 +158,7 @@ const projects: ProjectItem[] = [
     link: "https://batik-gumregah.vercel.app",
     repoLink: "https://github.com/vanoathalla/batik-gumregah",
     image: "/projects/batik-gumregah.png",
+    features: ["Katalog Visual Kain Batik", "Optimasi Tampilan Mobile-First", "Informasi Kontak Langsung Pengrajin"],
   },
   {
     id: "aturbrat",
@@ -159,6 +171,7 @@ const projects: ProjectItem[] = [
     link: "https://aturbrat-kobrat.vercel.app",
     repoLink: "https://github.com/vanoathalla/aturbrat-kobrat",
     image: "/projects/aturbrat.png",
+    features: ["Pembagian Jadwal & Piket Tim", "Pelacakan Progres Tugas Harian", "Antarmuka Ringan React + Vite"],
   },
 ];
 
@@ -176,7 +189,7 @@ export default function Works() {
             entry.target
               .querySelectorAll<HTMLElement>(".fade-up")
               .forEach((node, i) => {
-                setTimeout(() => node.classList.add("visible"), i * 70);
+                setTimeout(() => node.classList.add("visible"), i * 65);
               });
             observer.unobserve(entry.target);
           }
@@ -312,7 +325,7 @@ export default function Works() {
                       className="overflow-hidden bg-(--color-surface)/40 border-t border-(--color-border)"
                     >
                       <div className="p-6 md:p-10 grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-8 md:gap-12 items-start">
-                        {/* Kolom Visual (Gambar jika tersedia, atau info showcase) */}
+                        {/* Kolom Visual (Gambar jika ada, atau Card Arsitektur Bersih jika null) */}
                         <div>
                           {project.image ? (
                             <div className="relative aspect-[16/10] overflow-hidden rounded-xl border border-(--color-border) bg-(--color-surface-soft) shadow-md group/img">
@@ -324,28 +337,34 @@ export default function Works() {
                               />
                             </div>
                           ) : (
-                            <div className="aspect-[16/10] rounded-xl border border-(--color-border) bg-(--color-base) p-8 flex flex-col justify-between">
+                            <div className="aspect-[16/10] rounded-xl border border-(--color-border) bg-(--color-base) p-6 md:p-8 flex flex-col justify-between shadow-sm">
                               <div>
-                                <span className="font-sans text-[11px] tracking-widest uppercase text-(--color-accent) block mb-2">
-                                  Proyek Terverifikasi
-                                </span>
+                                <div className="flex items-center gap-2 mb-3">
+                                  <span className="w-2 h-2 rounded-full bg-(--color-accent)" />
+                                  <span className="font-sans text-[11px] tracking-widest uppercase text-(--color-accent)">
+                                    Arsitektur &amp; Modul Proyek
+                                  </span>
+                                </div>
                                 <h4 className="font-display text-2xl text-(--color-text-primary) mb-3">
                                   {project.title}
                                 </h4>
                                 <p className="font-sans font-light text-sm text-(--color-text-muted) leading-relaxed">
-                                  Kode sumber dan arsitektur modul lengkap tersedia secara publik di repository GitHub.
+                                  Proyek dibangun dengan arsitektur kode terstruktur, modular, dan teruji langsung di lingkungan produksi/studi kasus.
                                 </p>
                               </div>
-                              <div className="flex flex-wrap gap-2 pt-4">
-                                {project.tags.map((tag) => (
-                                  <span
-                                    key={tag}
-                                    className="font-sans text-[10px] tracking-wider uppercase text-(--color-text-muted) bg-(--color-surface) px-2.5 py-1 rounded"
-                                  >
-                                    {tag}
-                                  </span>
-                                ))}
-                              </div>
+
+                              {project.features && (
+                                <div className="space-y-1.5 pt-4 border-t border-(--color-border)/50">
+                                  {project.features.map((feat, fIdx) => (
+                                    <div key={fIdx} className="flex items-center gap-2">
+                                      <span className="text-(--color-accent) text-xs">✓</span>
+                                      <span className="font-sans text-[12px] text-(--color-text-primary)">
+                                        {feat}
+                                      </span>
+                                    </div>
+                                  ))}
+                                </div>
+                              )}
                             </div>
                           )}
                         </div>
@@ -408,7 +427,7 @@ export default function Works() {
                               >
                                 Source Code GitHub
                                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-                                  <path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
+                                  <path d="M2 10L10 2H4M10 2V8" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
                                 </svg>
                               </a>
                             )}
