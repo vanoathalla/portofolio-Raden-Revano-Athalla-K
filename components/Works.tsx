@@ -1,256 +1,170 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
-const projects = [
+interface ProjectItem {
+  id: string;
+  index: string;
+  title: string;
+  tags: string[];
+  description: string;
+  year: string;
+  link?: string;
+  repoLink?: string;
+  image?: string | null;
+}
+
+const projects: ProjectItem[] = [
   {
     id: "sip-magang",
+    index: "01",
     title: "SIP-MAGANG — Sistem Presensi Geofencing DISPORA DIY",
     tags: ["Next.js", "TypeScript", "Prisma", "PostgreSQL", "Geofencing"],
     description:
-      "Dibuat untuk kebutuhan operasional DISPORA DIY biar presensi ratusan anak magang nggak bisa dititip atau dipalsukan. Validasi lokasi absensi dicek otomatis menggunakan radius GPS (geofencing) langsung lewat browser HP peserta magang, lengkap dengan dashboard rekap kehadiran untuk admin.",
+      "Dibuat untuk kebutuhan operasional DISPORA DIY agar presensi ratusan anak magang terverifikasi akurat dan tidak dapat dimanipulasi. Validasi lokasi absensi dicek otomatis menggunakan radius GPS (geofencing) langsung lewat browser HP peserta magang, dilengkapi dashboard rekap kehadiran dan panel admin terpusat.",
     year: "2025",
     link: "https://github.com/vanoathalla/presensi-magang",
     repoLink: "https://github.com/vanoathalla/presensi-magang",
     image: "/projects/sip-magang.png",
-    imageAspect: "aspect-[16/10]",
-    imageBg: "bg-(--color-surface-soft)",
-    imageFit: "object-cover object-top",
+  },
+  {
+    id: "po-in-aja",
+    index: "02",
+    title: "PO-in Aja — Pre-Order Jersey & Merchandise Platform",
+    tags: ["Laravel 11", "Livewire 3", "Tailwind CSS", "MySQL"],
+    description:
+      "Platform pre-order jersey dan merchandise dengan antarmuka bergaya iOS (White & Royal Blue Edition). Diciptakan dari kecintaan pada dunia olahraga dan kebutuhan kepanitiaan kampus, menyediakan sistem katalog apparel interaktif, variasi ukuran dan custom nama, serta rekapitulasi pesanan otomatis.",
+    year: "2024",
+    link: "https://github.com/vanoathalla/po-in-aja",
+    repoLink: "https://github.com/vanoathalla/po-in-aja",
+    image: null,
+  },
+  {
+    id: "terserah-app",
+    index: "03",
+    title: "TERSERAH! — Tongkrongan Decision Roulette",
+    tags: ["SvelteKit", "TypeScript", "Tailwind CSS", "Railway"],
+    description:
+      "Solusi pemecah kebuntuan circle tongkrongan saat bingung menentukan tempat makan atau destinasi kumpul. Dibangun menggunakan SvelteKit yang sangat ringan dan cepat, lengkap dengan animasi roulette putar acak dan opsi kustomisasi daftar pilihan.",
+    year: "2024",
+    link: "https://terserah-app-production.up.railway.app",
+    repoLink: "https://github.com/vanoathalla/terserah-app",
+    image: "/projects/terserah.png",
   },
   {
     id: "aplikasi-perminyakan",
+    index: "04",
     title: "Simulasi Ekonomi & Reservoir Perminyakan",
     tags: ["Next.js", "TypeScript", "Data Analysis", "Tailwind CSS"],
     description:
-      "Aplikasi kalkulator dan simulasi cash flow untuk proyek industri migas. Menghitung estimasi decline rate produksi, belanja modal (CAPEX/OPEX), sampai visualisasi grafik proyeksi keuangan dan indikator kelayakan investasi proyek selama 20 tahun ke depan.",
+      "Aplikasi kalkulator dan simulasi cash flow teknis untuk evaluasi kelayakan proyek industri migas. Menghitung estimasi decline rate produksi, belanja modal (CAPEX/OPEX), visualisasi grafik kumulatif, serta proyeksi indikator finansial selama 20 tahun ke depan.",
     year: "2024",
     link: "https://github.com/vanoathalla/aplikasi-perminyakan",
     repoLink: "https://github.com/vanoathalla/aplikasi-perminyakan",
     image: "/projects/perminyakan.png",
-    imageAspect: "aspect-[16/10]",
-    imageBg: "bg-(--color-surface-soft)",
-    imageFit: "object-cover object-top",
   },
   {
     id: "performa-pemain",
-    title: "Klasifikasi Performa Pemain Bola — Random Forest",
+    index: "05",
+    title: "Klasifikasi Performa Pemain Sepak Bola — Random Forest",
     tags: ["Python", "Machine Learning", "Scikit-Learn", "Pandas"],
     description:
-      "Model machine learning klasifikasi berbasis Random Forest dengan studi kasus skuad PSS Sleman musim 2024/2025. Mengolah data statistik menit bermain, passing, dan kontribusi taktik untuk mengelompokkan tingkat performa pemain secara objektif, lengkap dengan evaluasi confusion matrix.",
+      "Riset machine learning menggunakan algoritma Random Forest untuk mengelompokkan tingkat performa pemain sepak bola berdasarkan data statistik pertandingan riil skuad PSS Sleman musim 2024/2025. Dilengkapi evaluasi confusion matrix dan analisis feature importance.",
     year: "2024",
     link: "https://github.com/vanoathalla/performa-pemain",
     repoLink: "https://github.com/vanoathalla/performa-pemain",
     image: "/projects/performa-pemain.png",
-    imageAspect: "aspect-[16/10]",
-    imageBg: "bg-(--color-surface)",
-    imageFit: "object-contain p-2",
   },
   {
     id: "transjogja",
+    index: "06",
     title: "Trans Jogja Navigator — Rute & Halte Bus",
     tags: ["JavaScript", "Leaflet GIS", "Geolocation", "Web App"],
     description:
-      "Web navigasi praktis buat bantu pengguna Trans Jogja keliling kota. Sistem bisa langsung mendeteksi halte terdekat dari posisi HP dan menampilkan jalur rute bus tercepat tanpa ribet login atau install aplikasi. Sudah live dan langsung siap pakai.",
+      "Sistem navigasi cerdas berbasis web untuk memandu pengguna Trans Jogja keliling kota. Mendeteksi halte terdekat berdasarkan koordinat GPS perangkat dan menampilkan rute tercepat antar koridor tanpa perlu login atau instalasi aplikasi.",
     year: "2024",
     link: "https://transjogjanavigator.vercel.app",
     repoLink: "https://github.com/vanoathalla/transjogja-navigator",
     image: "/projects/transjogja.png",
-    imageAspect: "aspect-[16/10]",
-    imageBg: "bg-(--color-surface-soft)",
-    imageFit: "object-cover object-top",
   },
   {
     id: "mykarisma",
+    index: "07",
     title: "MyKarisma — Aplikasi Mobile Komunitas",
     tags: ["Flutter", "Dart", "SQLite", "Mobile App"],
     description:
-      "Aplikasi mobile berbasis Flutter yang dibuat untuk organisasi pemuda Kemirisewu. Dibikin biar pencatatan kas dan iuran organisasi transparan, jadwal kegiatan nggak hilang di grup WA, serta memudahkan anggota melihat titik kumpul lokasi acara lewat peta.",
+      "Aplikasi mobile lintas platform berbasis Flutter untuk organisasi pemuda Karisma Kemirisewu. Memfasilitasi pembukuan kas yang transparan, penjadwalan kegiatan agar tidak tercecer di chat grup, serta navigasi titik kumpul acara menggunakan peta.",
     year: "2026",
     link: "https://github.com/vanoathalla/mykarisma",
     repoLink: "https://github.com/vanoathalla/mykarisma",
     image: "/projects/mykarisma.png",
-    imageAspect: "aspect-[16/10]",
-    imageBg: "bg-(--color-surface)",
-    imageFit: "object-contain p-3",
+  },
+  {
+    id: "jgn-lupa-app",
+    index: "08",
+    title: "Jgn Lupa — Pengingat Harian Desktop & Android",
+    tags: ["React", "Electron", "Capacitor", "Tailwind CSS"],
+    description:
+      "Aplikasi pengingat jadwal dan to-do list harian multi-platform yang dapat berjalan di komputer desktop (Electron) maupun ponsel Android (Capacitor), dengan dukungan notifikasi alarm latar belakang yang andal.",
+    year: "2024",
+    link: "https://github.com/vanoathalla/jgn-lupa-app",
+    repoLink: "https://github.com/vanoathalla/jgn-lupa-app",
+    image: null,
   },
   {
     id: "webcraft-pos",
-    title: "Webcraft POS — Kasir & Manajemen Stok Toko",
+    index: "09",
+    title: "Webcraft POS — Sistem Kasir & Manajemen Stok Toko",
     tags: ["PHP", "MySQL", "Bootstrap", "Point of Sale"],
     description:
-      "Sistem kasir toko berbasis web untuk kebutuhan usaha retail dan UMKM. Mendukung pencatatan transaksi belanja cepat, pemotongan stok otomatis saat barang terjual, cetak struk pembayaran, dan rekap mutasi pendapatan harian pemilik usaha.",
+      "Sistem kasir toko berbasis web untuk kebutuhan usaha ritel dan UMKM. Mengakomodasi transaksi penjualan cepat, sinkronisasi stok otomatis saat produk terjual, cetak struk pembayaran, dan rekap mutasi pendapatan harian.",
     year: "2024",
     link: "https://website-kasir.infinityfreeapp.com",
     repoLink: "https://github.com/vanoathalla/webcraft-pos",
     image: "/projects/webcraft-pos.png",
-    imageAspect: "aspect-[16/10]",
-    imageBg: "bg-(--color-surface-soft)",
-    imageFit: "object-cover object-top",
   },
   {
     id: "counselink",
-    title: "Counselink — Platform Booking Konsultasi",
+    index: "10",
+    title: "Counselink — Platform Konseling & Janji Temu",
     tags: ["PHP", "MySQL", "Bootstrap", "Web App"],
     description:
-      "Aplikasi web konsultasi kesehatan ala Halodoc versi proyek matakuliah MPPL. Pengguna bisa browsing profil konselor profesional, booking sesi temu sesuai jadwal yang tersedia, dan mengelola riwayat konsultasi dalam satu portal yang terintegrasi.",
+      "Aplikasi web konsultasi kesehatan terpadu hasil proyek matakuliah MPPL. Pengguna dapat memilih tenaga konselor profesional, memesan jadwal sesi konsultasi, dan mengelola riwayat konsultasi dalam satu portal yang terintegrasi.",
     year: "2024",
     link: "https://github.com/vanoathalla/counselink",
     repoLink: "https://github.com/vanoathalla/counselink",
     image: "/projects/counselink.png",
-    imageAspect: "aspect-[16/10]",
-    imageBg: "bg-(--color-surface-soft)",
-    imageFit: "object-cover object-top",
-  },
-  {
-    id: "aturbrat",
-    title: "AturBrat Kobrat — Manajemen Kegiatan Tim",
-    tags: ["React", "Vite", "JavaScript", "Tailwind CSS"],
-    description:
-      "Dashboard web interaktif untuk koordinasi tugas dan operasional komunitas Kobrat. Membantu anggota tim membagi jadwal kegiatan, to-do list tugas harian, dan monitoring progres acara dengan tampilan yang bersih serta responsif di HP maupun laptop.",
-    year: "2024",
-    link: "https://aturbrat-kobrat.vercel.app",
-    repoLink: "https://github.com/vanoathalla/aturbrat-kobrat",
-    image: "/projects/aturbrat.png",
-    imageAspect: "aspect-[16/10]",
-    imageBg: "bg-(--color-surface-soft)",
-    imageFit: "object-cover object-top",
   },
   {
     id: "batik-gumregah",
+    index: "11",
     title: "Batik Gumregah — Katalog Digital Produk UMKM",
     tags: ["Next.js", "TypeScript", "Tailwind CSS", "Showcase"],
     description:
-      "Website showcase dan katalog digital untuk mengenalkan ragam motif kain Batik Gumregah ke jangkauan pasar yang lebih luas. Tampilannya dirancang minimalis dan cepat diakses, mempermudah calon pembeli melihat foto koleksi produk kain batik khas daerah.",
+      "Website katalog digital untuk memamerkan ragam motif kain Batik Gumregah secara estetik dan responsif, memudahkan calon pelanggan dari berbagai daerah melihat koleksi produk secara daring.",
     year: "2024",
     link: "https://batik-gumregah.vercel.app",
     repoLink: "https://github.com/vanoathalla/batik-gumregah",
     image: "/projects/batik-gumregah.png",
-    imageAspect: "aspect-[16/10]",
-    imageBg: "bg-(--color-surface)",
-    imageFit: "object-cover object-top",
   },
   {
-    id: "umkm-kanten",
-    title: "Direktori UMKM Desa Kanten Imogiri",
-    tags: ["Next.js", "TypeScript", "Tailwind CSS", "Web Portal"],
+    id: "aturbrat",
+    index: "12",
+    title: "AturBrat Kobrat — Manajemen Kegiatan Tim",
+    tags: ["React", "Vite", "JavaScript", "Tailwind CSS"],
     description:
-      "Website portal informasi dan promosi usaha lokal warga Desa Kanten, Imogiri. Berisi profil desa serta etalase ragam produk UMKM binaan warga sekitar agar lebih mudah ditemukan dan dihubungi oleh pelanggan luar daerah.",
+      "Dashboard manajemen operasional internal untuk koordinasi kegiatan tim Kobrat. Menangani pembagian giliran piket, daftar tugas harian, dan pemantauan timeline acara secara terstruktur.",
     year: "2024",
-    link: "https://umkm-desa-kanten-imogiri.vercel.app",
-    repoLink: "https://github.com/vanoathalla/umkm-kanten",
-    image: "/projects/umkm-kanten.png",
-    imageAspect: "aspect-[16/10]",
-    imageBg: "bg-(--color-surface-soft)",
-    imageFit: "object-cover object-top",
+    link: "https://aturbrat-kobrat.vercel.app",
+    repoLink: "https://github.com/vanoathalla/aturbrat-kobrat",
+    image: "/projects/aturbrat.png",
   },
 ];
 
-function ProjectCard({ project }: { project: (typeof projects)[number] }) {
-  const isLive = project.link && !project.link.includes("github.com");
-
-  return (
-    <article
-      className="project-card fade-up flex flex-col gap-5 pl-4"
-      data-cursor-hover
-    >
-      {/* Gambar project */}
-      <div
-        className={`w-full ${project.imageAspect} ${project.imageBg} overflow-hidden rounded-xl border border-(--color-border) relative group/img shadow-sm flex items-center justify-center`}
-        role="img"
-        aria-label={`Preview proyek ${project.title}`}
-      >
-        {project.image ? (
-          <img
-            src={project.image}
-            alt={`Preview proyek ${project.title}`}
-            className={`w-full h-full ${project.imageFit} transition-transform duration-500 ease-out group-hover/img:scale-105`}
-            loading="lazy"
-          />
-        ) : (
-          <div className="w-full h-full flex items-center justify-center">
-            <span className="font-sans text-[12px] text-(--color-text-muted)" aria-hidden="true">
-              Project Preview
-            </span>
-          </div>
-        )}
-      </div>
-
-      {/* Meta */}
-      <div className="flex flex-col gap-2">
-        {/* Tags */}
-        <div className="flex flex-wrap gap-2" aria-label="Teknologi yang digunakan">
-          {project.tags.map((tag) => (
-            <span
-              key={tag}
-              className="font-sans text-[10px] tracking-[0.1em] uppercase
-                text-(--color-text-muted) border border-(--color-border) px-2 py-0.5"
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
-
-        {/* Judul + tahun */}
-        <div className="flex items-start justify-between gap-4">
-          <h3 className="font-display font-normal text-2xl text-(--color-text-primary) leading-snug">
-            {project.title}
-          </h3>
-          <span className="font-sans text-[12px] text-(--color-text-muted) shrink-0 mt-1">
-            {project.year}
-          </span>
-        </div>
-
-        {/* Deskripsi santai & manusiawi */}
-        <p className="font-sans font-light text-sm text-(--color-text-muted) leading-relaxed max-w-prose">
-          {project.description}
-        </p>
-
-        {/* Links */}
-        <div className="flex items-center gap-4 pt-1 flex-wrap">
-          {isLive ? (
-            <a
-              href={project.link}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-sans text-[13px] text-(--color-accent)
-                underline-offset-4 hover:underline transition-all duration-200 w-fit"
-              aria-label={`Buka website live ${project.title}`}
-            >
-              Buka Website →
-            </a>
-          ) : (
-            <a
-              href={project.repoLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-sans text-[13px] text-(--color-accent)
-                underline-offset-4 hover:underline transition-all duration-200 w-fit"
-              aria-label={`Lihat repository ${project.title}`}
-            >
-              Lihat di GitHub →
-            </a>
-          )}
-
-          {isLive && project.repoLink && (
-            <a
-              href={project.repoLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="font-sans text-[12px] text-(--color-text-muted)
-                hover:text-(--color-text-primary) transition-colors duration-200"
-              aria-label={`Lihat source code ${project.title}`}
-            >
-              Source Code ↗
-            </a>
-          )}
-        </div>
-      </div>
-    </article>
-  );
-}
-
 export default function Works() {
   const sectionRef = useRef<HTMLElement>(null);
+  const [expandedId, setExpandedId] = useState<string | null>("sip-magang");
 
   useEffect(() => {
     const el = sectionRef.current;
@@ -262,7 +176,7 @@ export default function Works() {
             entry.target
               .querySelectorAll<HTMLElement>(".fade-up")
               .forEach((node, i) => {
-                setTimeout(() => node.classList.add("visible"), i * 90);
+                setTimeout(() => node.classList.add("visible"), i * 70);
               });
             observer.unobserve(entry.target);
           }
@@ -274,36 +188,40 @@ export default function Works() {
     return () => observer.disconnect();
   }, []);
 
-  // Pasangkan project 2 per 2 untuk grid asimetris
-  const pairs: [typeof projects[number], typeof projects[number] | undefined][] = [];
-  for (let i = 0; i < projects.length; i += 2) {
-    pairs.push([projects[i], projects[i + 1]]);
-  }
+  const toggleProject = (id: string) => {
+    setExpandedId((prev) => (prev === id ? null : id));
+  };
 
   return (
     <section
       id="work"
       ref={sectionRef}
       className="relative px-6 md:px-12 lg:px-24 py-[120px] max-md:py-16"
-      aria-label="Proyek pilihan"
+      aria-label="Karya & Proyek Terpilih"
     >
       <div className="max-w-[1280px] mx-auto">
-        {/* Label Header */}
-        <div className="fade-up flex items-baseline justify-between mb-12 border-b border-(--color-border) pb-6">
+        {/* Header Seksi */}
+        <div className="fade-up flex flex-col md:flex-row md:items-end justify-between mb-12 border-b border-(--color-border) pb-8 gap-4">
           <div>
-            <p className="font-sans text-[11px] tracking-[0.15em] uppercase text-(--color-text-muted) mb-2">
+            <p className="font-sans text-[11px] tracking-[0.18em] uppercase text-(--color-accent) mb-3">
               Selected Works
             </p>
-            <h2 className="font-display font-normal text-3xl md:text-4xl text-(--color-text-primary)">
-              Koleksi Proyek &amp; Program
+            <h2 className="font-display font-normal text-3xl md:text-5xl text-(--color-text-primary)">
+              Koleksi Program &amp; Proyek
             </h2>
           </div>
-          <span className="font-sans text-[12px] text-(--color-text-muted)">
-            {projects.length} Proyek
-          </span>
+          <div className="flex items-center gap-4">
+            <span className="font-sans text-[12px] text-(--color-text-muted)">
+              {projects.length} Proyek Terdaftar
+            </span>
+            <span className="hidden md:inline text-(--color-border)">·</span>
+            <span className="hidden md:inline font-sans text-[11px] text-(--color-accent) tracking-wide">
+              Klik judul untuk buka preview
+            </span>
+          </div>
         </div>
 
-        {/* Ghost number */}
+        {/* Ghost Numbering */}
         <span
           className="font-display font-normal text-[160px] leading-none
             text-(--color-text-primary)/[0.03]
@@ -314,36 +232,210 @@ export default function Works() {
           01
         </span>
 
-        {/* Daftar project dalam grid asimetris berpasangan */}
-        <div className="flex flex-col gap-12">
-          {pairs.map(([itemA, itemB], rowIdx) => (
-            <div
-              key={itemA.id}
-              className={`grid grid-cols-1 ${
-                rowIdx % 2 === 0
-                  ? "md:grid-cols-[55fr_45fr]"
-                  : "md:grid-cols-[45fr_55fr]"
-              } gap-8`}
-            >
-              <ProjectCard project={itemA} />
-              {itemB && <ProjectCard project={itemB} />}
-            </div>
-          ))}
+        {/* Interactive Typography List */}
+        <div className="divide-y divide-(--color-border) border-y border-(--color-border)">
+          {projects.map((project) => {
+            const isExpanded = expandedId === project.id;
+            const isLive = project.link && !project.link.includes("github.com");
+
+            return (
+              <div
+                key={project.id}
+                className="fade-up transition-colors duration-200"
+              >
+                {/* Baris Utama (Tipografi Bersih) */}
+                <button
+                  type="button"
+                  onClick={() => toggleProject(project.id)}
+                  className={`w-full py-6 md:py-8 text-left grid grid-cols-[40px_1fr_auto] md:grid-cols-[60px_1fr_auto_auto] items-center gap-4 md:gap-8 group transition-colors duration-200 ${
+                    isExpanded ? "bg-(--color-surface)/60" : "hover:bg-(--color-surface)/30"
+                  }`}
+                  aria-expanded={isExpanded}
+                >
+                  {/* Nomor Indeks */}
+                  <span className="font-sans text-[12px] tracking-[0.15em] text-(--color-text-muted) group-hover:text-(--color-accent) transition-colors">
+                    {project.index}
+                  </span>
+
+                  {/* Judul & Preview Tag */}
+                  <div>
+                    <h3 className="font-display text-xl md:text-2xl text-(--color-text-primary) group-hover:text-(--color-accent) transition-colors leading-snug">
+                      {project.title}
+                    </h3>
+                    <div className="flex flex-wrap gap-2 mt-2">
+                      {project.tags.slice(0, 3).map((tag) => (
+                        <span
+                          key={tag}
+                          className="font-sans text-[10px] tracking-wider uppercase text-(--color-text-muted) border border-(--color-border) px-2 py-0.5"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                      {project.tags.length > 3 && (
+                        <span className="font-sans text-[10px] text-(--color-text-muted) self-center">
+                          +{project.tags.length - 3} lainnya
+                        </span>
+                      )}
+                    </div>
+                  </div>
+
+                  {/* Tahun (Desktop) */}
+                  <span className="hidden md:block font-sans text-[12px] text-(--color-text-muted)">
+                    {project.year}
+                  </span>
+
+                  {/* Tombol Toggle Aksi */}
+                  <div className="flex items-center gap-2 pl-2">
+                    <span className="hidden sm:inline font-sans text-[11px] tracking-widest uppercase text-(--color-text-muted) group-hover:text-(--color-text-primary) transition-colors">
+                      {isExpanded ? "Tutup" : "Preview"}
+                    </span>
+                    <span
+                      className={`w-8 h-8 rounded-full border border-(--color-border) flex items-center justify-center text-(--color-text-muted) group-hover:border-(--color-accent) group-hover:text-(--color-accent) transition-transform duration-300 ${
+                        isExpanded ? "rotate-45 bg-(--color-accent) text-black border-(--color-accent)" : ""
+                      }`}
+                      aria-hidden="true"
+                    >
+                      +
+                    </span>
+                  </div>
+                </button>
+
+                {/* Konten Terbuka (Gambar + Detail + Link) */}
+                <AnimatePresence initial={false}>
+                  {isExpanded && (
+                    <motion.div
+                      key={`content-${project.id}`}
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
+                      className="overflow-hidden bg-(--color-surface)/40 border-t border-(--color-border)"
+                    >
+                      <div className="p-6 md:p-10 grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-8 md:gap-12 items-start">
+                        {/* Kolom Visual (Gambar jika tersedia, atau info showcase) */}
+                        <div>
+                          {project.image ? (
+                            <div className="relative aspect-[16/10] overflow-hidden rounded-xl border border-(--color-border) bg-(--color-surface-soft) shadow-md group/img">
+                              <img
+                                src={project.image}
+                                alt={`Screenshot antarmuka ${project.title}`}
+                                className="w-full h-full object-cover object-top transition-transform duration-500 ease-out group-hover/img:scale-105"
+                                loading="lazy"
+                              />
+                            </div>
+                          ) : (
+                            <div className="aspect-[16/10] rounded-xl border border-(--color-border) bg-(--color-base) p-8 flex flex-col justify-between">
+                              <div>
+                                <span className="font-sans text-[11px] tracking-widest uppercase text-(--color-accent) block mb-2">
+                                  Proyek Terverifikasi
+                                </span>
+                                <h4 className="font-display text-2xl text-(--color-text-primary) mb-3">
+                                  {project.title}
+                                </h4>
+                                <p className="font-sans font-light text-sm text-(--color-text-muted) leading-relaxed">
+                                  Kode sumber dan arsitektur modul lengkap tersedia secara publik di repository GitHub.
+                                </p>
+                              </div>
+                              <div className="flex flex-wrap gap-2 pt-4">
+                                {project.tags.map((tag) => (
+                                  <span
+                                    key={tag}
+                                    className="font-sans text-[10px] tracking-wider uppercase text-(--color-text-muted) bg-(--color-surface) px-2.5 py-1 rounded"
+                                  >
+                                    {tag}
+                                  </span>
+                                ))}
+                              </div>
+                            </div>
+                          )}
+                        </div>
+
+                        {/* Kolom Detail & Tautan */}
+                        <div className="flex flex-col justify-between h-full gap-6">
+                          <div>
+                            <div className="flex items-center gap-3 mb-4">
+                              <span className="font-sans text-[11px] tracking-widest uppercase text-(--color-accent)">
+                                Detail Teknis &amp; Solusi
+                              </span>
+                              <span className="text-(--color-border)">·</span>
+                              <span className="font-sans text-[11px] text-(--color-text-muted)">
+                                Rilis {project.year}
+                              </span>
+                            </div>
+
+                            <p className="font-sans font-light text-[15px] text-(--color-text-primary)/90 leading-relaxed mb-6">
+                              {project.description}
+                            </p>
+
+                            <div className="mb-6">
+                              <p className="font-sans text-[11px] tracking-widest uppercase text-(--color-text-muted) mb-3">
+                                Teknologi Digunakan:
+                              </p>
+                              <div className="flex flex-wrap gap-2">
+                                {project.tags.map((tag) => (
+                                  <span
+                                    key={tag}
+                                    className="font-sans text-[11px] text-(--color-text-muted) border border-(--color-border) px-2.5 py-1 rounded bg-(--color-base)"
+                                  >
+                                    {tag}
+                                  </span>
+                                ))}
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Tombol Akses */}
+                          <div className="flex flex-wrap items-center gap-4 pt-4 border-t border-(--color-border)">
+                            {isLive && (
+                              <a
+                                href={project.link}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-2 font-sans text-[12px] tracking-wider uppercase bg-(--color-text-primary) text-(--color-base) px-5 py-2.5 rounded hover:bg-(--color-accent) hover:text-black transition-colors duration-200"
+                              >
+                                Buka Website Live
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                                  <path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
+                                </svg>
+                              </a>
+                            )}
+                            {project.repoLink && (
+                              <a
+                                href={project.repoLink}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center gap-2 font-sans text-[12px] tracking-wider uppercase border border-(--color-border) text-(--color-text-primary) px-5 py-2.5 rounded hover:border-(--color-accent) hover:text-(--color-accent) transition-colors duration-200"
+                              >
+                                Source Code GitHub
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
+                                  <path d="M2 10L10 2M10 2H4M10 2V8" stroke="currentColor" strokeWidth="1.3" strokeLinecap="round" strokeLinejoin="round"/>
+                                </svg>
+                              </a>
+                            )}
+                          </div>
+                        </div>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            );
+          })}
         </div>
 
-        {/* Lihat semua */}
-        <div className="fade-up flex justify-center mt-20">
+        {/* Footer Seksi */}
+        <div className="fade-up flex justify-center mt-16">
           <a
             href="https://github.com/vanoathalla?tab=repositories"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block font-sans text-[12px] tracking-[0.12em] uppercase
+            className="inline-block font-sans text-[12px] tracking-[0.14em] uppercase
               border border-(--color-text-primary) text-(--color-text-primary)
               px-8 py-[14px]
               hover:bg-(--color-text-primary) hover:text-(--color-base)
               transition-colors duration-200"
           >
-            Lihat Repository Lainnya di GitHub →
+            Lihat Seluruh Repositori di GitHub →
           </a>
         </div>
       </div>
