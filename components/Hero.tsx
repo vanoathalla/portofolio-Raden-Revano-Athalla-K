@@ -47,9 +47,9 @@ export default function Hero() {
             <span className="hero-line block">Athalla Kartika.</span>
           </h1>
 
-          {/* Foto khusus Mobile (Tampil dengan bingkai squircle iOS & animasi melayang) */}
+          {/* Foto khusus Mobile (Tampil dengan bingkai squircle rapi & tenang) */}
           <div className="fade-up md:hidden my-6 flex justify-center">
-            <div className="animate-float relative w-[220px] sm:w-[260px] aspect-[3/4] overflow-hidden rounded-[26px] border border-(--color-border)/80 bg-white/60 p-1.5 backdrop-blur-md shadow-[0_12px_36px_rgba(0,0,0,0.08)] transition-transform duration-500 hover:scale-[1.02]">
+            <div className="relative w-[220px] sm:w-[260px] aspect-[3/4] overflow-hidden rounded-[26px] border border-(--color-border)/80 bg-white/60 p-1.5 backdrop-blur-md shadow-[0_12px_36px_rgba(0,0,0,0.06)]">
               <img
                 src="/foto-profil.jpg"
                 alt="Raden Revano Athalla Kartika"
@@ -84,9 +84,9 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* Kanan — foto (desktop view dengan bingkai squircle iOS & animasi melayang halus) */}
+        {/* Kanan — foto (desktop view dengan bingkai squircle rapi & tenang) */}
         <div className="fade-up hidden md:block shrink-0">
-          <div className="animate-float relative w-[340px] lg:w-[420px] aspect-[3/4] overflow-hidden rounded-[32px] border border-(--color-border)/80 bg-white/60 p-2 backdrop-blur-md shadow-[0_20px_50px_rgba(0,0,0,0.08)] hover:shadow-[0_28px_60px_rgba(0,0,0,0.12)] transition-shadow duration-500">
+          <div className="relative w-[340px] lg:w-[420px] aspect-[3/4] overflow-hidden rounded-[32px] border border-(--color-border)/80 bg-white/60 p-2 backdrop-blur-md shadow-[0_20px_50px_rgba(0,0,0,0.06)]">
             <img
               src="/foto-profil.jpg"
               alt="Raden Revano Athalla Kartika"

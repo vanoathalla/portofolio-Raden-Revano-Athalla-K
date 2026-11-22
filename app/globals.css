@@ -124,19 +124,6 @@ body {
   animation: ambient-glow 14s ease-in-out infinite alternate;
 }
 
-/* Floating animation for photo portrait */
-@keyframes float-gentle {
-  0%, 100% {
-    transform: translateY(0px) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-10px) rotate(0.6deg);
-  }
-}
-
-.animate-float {
-  animation: float-gentle 5.5s ease-in-out infinite;
-}
 
 /* Apple specular reflection sheen on cards */
 .ios-sheen {
