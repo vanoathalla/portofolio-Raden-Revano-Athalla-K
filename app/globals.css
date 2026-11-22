@@ -166,17 +166,17 @@ body {
   transform: translateX(100%) rotate(25deg);
 }
 
-/* ─── Fade-up scroll animation (prominent, silky spring) ────── */
+/* ─── Fade-up scroll animation (ultra-smooth momentum easing) ─ */
 .fade-up {
   opacity: 0;
-  transform: translateY(34px) scale(0.985);
-  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(26px);
+  transition: opacity 0.8s cubic-bezier(0.2, 0.8, 0.2, 1), transform 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
   will-change: opacity, transform;
 }
 
 .fade-up.visible {
   opacity: 1;
-  transform: translateY(0) scale(1);
+  transform: translateY(0);
 }
 
 /* Hero lines animate with iOS curve */

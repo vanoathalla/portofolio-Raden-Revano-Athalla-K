@@ -182,22 +182,19 @@ export default function Works() {
   useEffect(() => {
     const el = sectionRef.current;
     if (!el) return;
+    const nodes = el.querySelectorAll<HTMLElement>(".fade-up");
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target
-              .querySelectorAll<HTMLElement>(".fade-up")
-              .forEach((node, i) => {
-                setTimeout(() => node.classList.add("visible"), i * 65);
-              });
+            entry.target.classList.add("visible");
             observer.unobserve(entry.target);
           }
         });
       },
-      { threshold: 0.05 }
+      { threshold: 0.1, rootMargin: "0px 0px -40px 0px" }
     );
-    observer.observe(el);
+    nodes.forEach((node) => observer.observe(node));
     return () => observer.disconnect();
   }, []);
 
@@ -444,19 +441,16 @@ export default function Works() {
           })}
         </div>
 
-        {/* Footer Seksi */}
-        <div className="fade-up flex justify-center mt-16">
+        {/* Footer Seksi: Tautan Bersih & Estetik ke GitHub (Tanpa Kotak Kaku) */}
+        <div className="fade-up flex justify-center mt-12 md:mt-16">
           <a
             href="https://github.com/vanoathalla?tab=repositories"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block font-sans text-[12px] tracking-[0.14em] uppercase
-              border border-(--color-text-primary) text-(--color-text-primary)
-              px-8 py-[14px]
-              hover:bg-(--color-text-primary) hover:text-(--color-base)
-              transition-colors duration-200"
+            className="group inline-flex items-center gap-2 font-sans text-[12px] tracking-[0.14em] uppercase text-(--color-text-muted) hover:text-(--color-text-primary) transition-colors py-2 px-3 active:scale-[0.98]"
           >
-            Lihat Seluruh Repositori di GitHub →
+            <span>Koleksi kode lainnya di GitHub</span>
+            <span className="text-(--color-accent) transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:translate-x-1">→</span>
           </a>
         </div>
       </div>

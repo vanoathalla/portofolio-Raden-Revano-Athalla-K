@@ -168,22 +168,19 @@ export default function Skills() {
   useEffect(() => {
     const el = sectionRef.current;
     if (!el) return;
+    const nodes = el.querySelectorAll<HTMLElement>(".fade-up");
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
-            entry.target
-              .querySelectorAll<HTMLElement>(".fade-up")
-              .forEach((node, i) => {
-                setTimeout(() => node.classList.add("visible"), i * 80);
-              });
+            entry.target.classList.add("visible");
             observer.unobserve(entry.target);
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.1, rootMargin: "0px 0px -40px 0px" }
     );
-    observer.observe(el);
+    nodes.forEach((node) => observer.observe(node));
     return () => observer.disconnect();
   }, []);
 
