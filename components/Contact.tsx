@@ -31,76 +31,74 @@ export default function Contact() {
     <section
       id="contact"
       ref={sectionRef}
-      className="bg-(--color-base) px-6 md:px-12 lg:px-24 py-[120px] max-md:py-16"
+      className="bg-(--color-base) px-6 md:px-12 lg:px-24 py-[120px] max-md:py-16 relative overflow-hidden"
       aria-label="Kontak"
     >
-      <div className="max-w-[600px] mx-auto text-center">
-        <p className="fade-up font-sans text-[11px] tracking-[0.15em] uppercase text-(--color-text-muted) mb-5">
-          Kontak
-        </p>
+      {/* iOS Ambient Aura */}
+      <div
+        className="pointer-events-none absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-gradient-to-t from-amber-200/15 via-orange-100/10 to-transparent rounded-full blur-3xl -z-10 animate-ambient"
+        aria-hidden="true"
+      />
 
-        <h2 className="fade-up font-display font-normal text-[clamp(2.2rem,5vw,56px)] leading-[1.1] text-(--color-text-primary) mb-6">
-          Mari terhubung dan
-          <br />
-          berdiskusi lebih lanjut.
-        </h2>
+      <div className="max-w-[680px] mx-auto text-center">
+        {/* iOS Card Container */}
+        <div className="bg-white/60 backdrop-blur-xl border border-(--color-border)/80 rounded-3xl p-8 sm:p-12 shadow-[0_12px_40px_rgba(0,0,0,0.03)]">
+          <p className="fade-up font-sans text-[11px] font-medium tracking-[0.18em] uppercase text-(--color-accent) mb-4">
+            Kontak &amp; Komunikasi
+          </p>
 
-        <p className="fade-up font-sans text-sm text-(--color-text-muted) max-w-md mx-auto mb-10 leading-relaxed">
-          Terbuka untuk diskusi seputar proyek teknologi, peluang kolaborasi, maupun pertanyaan terkait karya di portofolio ini. Silakan hubungi saya melalui email atau media sosial di bawah.
-        </p>
+          <h2 className="fade-up font-display font-normal text-[clamp(2rem,4.5vw,48px)] leading-[1.12] text-(--color-text-primary) mb-5">
+            Mari terhubung dan
+            <br />
+            berdiskusi lebih lanjut.
+          </h2>
 
-        {/* Email — underline animasi dari kiri */}
-        <div className="fade-up mb-10">
-          <a
-            href="mailto:revanoathalla31@gmail.com"
-            className="group relative inline-block font-sans text-[18px] text-(--color-text-primary)"
-          >
-            revanoathalla31@gmail.com
-            <span
-              className="absolute bottom-0 left-0 h-px bg-(--color-accent)
-                w-0 group-hover:w-full transition-[width] duration-300 ease-out"
-              aria-hidden="true"
-            />
-          </a>
-        </div>
+          <p className="fade-up font-sans font-light text-[15px] text-(--color-text-muted) max-w-md mx-auto mb-8 leading-relaxed">
+            Terbuka untuk diskusi seputar proyek teknologi, peluang kolaborasi, maupun pertanyaan terkait karya di portofolio ini.
+          </p>
 
-        {/* Nomor HP */}
-        <div className="fade-up mb-10">
-          <a
-            href="tel:088232850046"
-            className="group relative inline-block font-sans text-[15px] text-(--color-text-muted)"
-          >
-            088232850046
-            <span
-              className="absolute bottom-0 left-0 h-px bg-(--color-accent)
-                w-0 group-hover:w-full transition-[width] duration-300 ease-out"
-              aria-hidden="true"
-            />
-          </a>
-        </div>
+          {/* Email & Telepon — iOS Pill Badges */}
+          <div className="fade-up flex flex-col sm:flex-row items-center justify-center gap-3 mb-8">
+            <a
+              href="mailto:revanoathalla31@gmail.com"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-black/[0.03] border border-(--color-border)/70 font-sans text-[14px] text-(--color-text-primary) hover:bg-black/[0.06] active:scale-[0.97] transition-all duration-200"
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <rect width="20" height="16" x="2" y="4" rx="2"/>
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+              </svg>
+              revanoathalla31@gmail.com
+            </a>
 
-        {/* Social links */}
-        <div className="fade-up flex items-center justify-center gap-3 flex-wrap">
-          {[
-            { label: "GitHub",    href: "https://github.com/vanoathalla?tab=repositories" },
-            { label: "LinkedIn",  href: "https://www.linkedin.com/in/revano-athalla-357483392/" },
-            { label: "Instagram", href: "https://instagram.com/vanoathalla_" },
-          ].map(({ label, href }, i, arr) => (
-            <span key={label} className="flex items-center gap-3">
+            <a
+              href="tel:088232850046"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full bg-black/[0.03] border border-(--color-border)/70 font-sans text-[14px] text-(--color-text-muted) hover:text-(--color-text-primary) hover:bg-black/[0.06] active:scale-[0.97] transition-all duration-200"
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+              088232850046
+            </a>
+          </div>
+
+          {/* Social links (iOS Capsule Buttons) */}
+          <div className="fade-up flex items-center justify-center gap-2.5 flex-wrap pt-6 border-t border-(--color-border)/60">
+            {[
+              { label: "GitHub",    href: "https://github.com/vanoathalla?tab=repositories" },
+              { label: "LinkedIn",  href: "https://www.linkedin.com/in/revano-athalla-357483392/" },
+              { label: "Instagram", href: "https://instagram.com/vanoathalla_" },
+            ].map(({ label, href }) => (
               <a
+                key={label}
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-sans text-[13px] text-(--color-text-muted)
-                  hover:text-(--color-accent) transition-colors duration-200"
+                className="font-sans text-[12px] font-medium tracking-wide px-4 py-1.5 rounded-full border border-(--color-border)/70 bg-white/70 text-(--color-text-muted) hover:text-(--color-text-primary) hover:border-(--color-accent) hover:bg-white active:scale-[0.97] transition-all duration-200"
               >
-                {label}
+                {label} ↗
               </a>
-              {i < arr.length - 1 && (
-                <span className="text-(--color-accent) text-[10px]" aria-hidden="true">·</span>
-              )}
-            </span>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>

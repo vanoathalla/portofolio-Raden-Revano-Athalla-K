@@ -47,41 +47,45 @@ export default function About() {
 
           <div className="space-y-6">
             <p className="fade-up font-sans font-light text-[16px] text-(--color-text-muted) leading-relaxed">
-              Saya Raden Revano Athalla Kartika (akrab disapa Vano), mahasiswa S-1 Teknik Informatika
-              di UPN &ldquo;Veteran&rdquo; Yogyakarta angkatan 2023. Perjalanan saya punya cerita yang cukup unik:
-              sebelum mendalami dunia teknologi, masa kecil hingga remaja saya dihabiskan dengan dedikasi penuh
-              di lapangan sepak bola sebagai atlet muda kompetitif.
+              Saya Raden Revano Athalla Kartika (biasa dipanggil Vano), mahasiswa S-1 Teknik Informatika
+              di UPN &ldquo;Veteran&rdquo; Yogyakarta (angkatan 2023). Sebelum mendalami dunia pemrograman,
+              sebagian besar masa kecil hingga remaja saya dihabiskan di lapangan sepak bola sebagai atlet
+              muda dalam pembinaan kompetitif.
             </p>
 
             <p className="fade-up font-sans font-light text-[16px] text-(--color-text-muted) leading-relaxed">
-              Tahun-tahun berlatih keras dan bertanding di berbagai turnamen menanamkan nilai kedisiplinan yang ketat,
-              mentalitas pantang menyerah di bawah tekanan, serta kepekaan bekerja sama dalam tim. Ketika memasuki bangku
-              kuliah Informatika, arah langkah saya bertransformasi ke rekayasa perangkat lunak. Sepak bola yang dulunya
-              dijalani sebagai atlet kompetitif kini tetap menjadi hobi utama yang sangat saya cintai — sarana menjaga kebugaran
-              dan menyegarkan pikiran di sela kesibukan koding.
+              Tahun-tahun berlatih dan bertanding membentuk kebiasaan yang melekat hingga hari ini:
+              kedisiplinan waktu, ketenangan berpikir saat menghadapi situasi sulit, dan pentingnya
+              komunikasi dalam tim. Ketika masuk kuliah Informatika, fokus saya beralih ke rekayasa
+              perangkat lunak. Sepak bola yang dulunya ditekuni sebagai atlet kini tetap menjadi hobi utama
+              untuk menjaga kebugaran dan menyegarkan pikiran di sela kesibukan koding.
             </p>
 
             <p className="fade-up font-sans font-light text-[16px] text-(--color-text-muted) leading-relaxed">
-              Jiwa kepemimpinan dari lapangan hijau membawa saya dipercaya memimpin sebagai <strong>Ketua Pelaksana IF CUP 2024</strong> —
-              turnamen olahraga bergengsi jurusan Informatika, mengoordinasi puluhan panitia lintas divisi, dan memastikan acara
-              berjalan lancar. Pengalaman ini berlanjut saat dipercaya menjadi <strong>Volunteer Guard Veteran Cup Festival 2025</strong> dalam pengamanan crowd management dan dipercaya kembali di <strong>Divisi Dekorasi Veteran Cup Festival 2026</strong> dalam penataan visual artistik panggung festival kampus. Bahkan, kecintaan pada sepak bola turut menginspirasi proyek teknologi saya, seperti riset machine learning
-              klasifikasi performa pemain PSS Sleman hingga platform pre-order jersey PO-in Aja.
+              Di kampus, kebiasaan berkoordinasi membawa saya dipercaya menjadi <strong>Ketua Pelaksana IF CUP 2024</strong> —
+              turnamen olahraga dan e-sport tahunan jurusan Informatika yang melibatkan lebih dari 60 panitia.
+              Tanggung jawab ini berlanjut lewat peran <strong>Volunteer Guard Veteran Cup Festival 2025</strong> dan
+              divisi <strong>Dekorasi &amp; Artistik Veteran Cup Festival 2026</strong>. Kecintaan pada sepak bola juga menginspirasi
+              beberapa proyek saya, mulai dari riset klasifikasi performa pemain PSS Sleman hingga platform pemesanan jersey PO-in Aja.
             </p>
 
             <p className="fade-up font-sans font-light text-[16px] text-(--color-text-muted) leading-relaxed">
-              Bagi saya, baik di lapangan sepak bola maupun di depan baris kode, kuncinya selalu sama: dedikasi, konsistensi,
-              dan komitmen untuk terus memberikan yang terbaik.
+              Bagi saya, baik di lapangan maupun di hadapan baris kode, prinsipnya sederhana: konsisten,
+              memperhatikan detail, dan bertanggung jawab penuh atas apa yang dikerjakan.
             </p>
           </div>
         </div>
 
-        {/* Kanan — Kartu Kilas Perjalanan & Nilai */}
+        {/* Kanan — Kartu Kilas Perjalanan & Nilai (iOS Widget Aesthetic) */}
         <div className="fade-up space-y-6">
           {/* Card 1: Sekilas Profil */}
-          <div className="border border-(--color-border) p-8 bg-(--color-base) rounded-xl">
-            <p className="font-sans text-[11px] tracking-[0.15em] uppercase text-(--color-accent) mb-5">
-              Sekilas Profil
-            </p>
+          <div className="border border-(--color-border)/80 p-7 bg-white/50 backdrop-blur-md rounded-2xl shadow-[0_4px_24px_rgba(0,0,0,0.03)]">
+            <div className="flex items-center gap-2 mb-5">
+              <span className="w-2 h-2 rounded-full bg-(--color-accent)" />
+              <p className="font-sans text-[11px] font-medium tracking-[0.15em] uppercase text-(--color-accent)">
+                Sekilas Profil
+              </p>
+            </div>
             <ul className="space-y-4" aria-label="Info singkat profil">
               {[
                 { title: "Pendidikan", desc: "S-1 Teknik Informatika, UPN 'Veteran' Yogyakarta (2023)" },
@@ -90,8 +94,8 @@ export default function About() {
                 { title: "Fokus Teknis", desc: "Web Development, Mobile App (Flutter), & Data Exploration" },
                 { title: "Domisili", desc: "Yogyakarta, Indonesia" },
               ].map((item) => (
-                <li key={item.title} className="flex flex-col gap-1 border-b border-(--color-border)/50 pb-3 last:border-none last:pb-0">
-                  <span className="font-sans text-[11px] tracking-wider uppercase text-(--color-text-muted)">
+                <li key={item.title} className="flex flex-col gap-1 border-b border-(--color-border)/40 pb-3 last:border-none last:pb-0">
+                  <span className="font-sans text-[11px] font-medium tracking-wide uppercase text-(--color-text-muted)">
                     {item.title}
                   </span>
                   <span className="font-sans text-[14px] text-(--color-text-primary)">
@@ -103,11 +107,11 @@ export default function About() {
           </div>
 
           {/* Card 2: Kutipan Nilai */}
-          <div className="border border-(--color-border) p-6 bg-(--color-surface-soft) rounded-xl">
-            <p className="font-sans text-[11px] tracking-widest uppercase text-(--color-text-muted) mb-2">
+          <div className="border border-(--color-border)/80 p-6 bg-white/40 backdrop-blur-md rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.02)]">
+            <p className="font-sans text-[11px] font-medium tracking-widest uppercase text-(--color-text-muted) mb-2">
               Prinsip Kerja
             </p>
-            <blockquote className="font-display text-[17px] text-(--color-text-primary) italic leading-relaxed">
+            <blockquote className="font-display text-[16px] text-(--color-text-primary) italic leading-relaxed">
               &ldquo;Disiplin dan daya juang di lapangan bola adalah modal terbaik saat menghadapi kode yang rumit dan dinamika memimpin tim.&rdquo;
             </blockquote>
           </div>

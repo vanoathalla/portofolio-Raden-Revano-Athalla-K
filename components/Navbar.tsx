@@ -64,7 +64,7 @@ export default function Navbar() {
       className={[
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
         scrolled
-          ? "bg-(--color-base) border-b border-(--color-border)"
+          ? "bg-(--color-base)/80 backdrop-blur-xl border-b border-(--color-border)/80 shadow-[0_2px_12px_rgba(0,0,0,0.03)]"
           : "bg-transparent border-b border-transparent",
       ].join(" ")}
     >
@@ -151,7 +151,7 @@ export default function Navbar() {
         aria-label="Navigation menu"
         className={[
           "md:hidden fixed top-0 right-0 h-screen w-[75vw] max-w-[320px]",
-          "bg-(--color-base) border-l border-(--color-border)",
+          "bg-(--color-base)/92 backdrop-blur-2xl border-l border-(--color-border)/80 shadow-2xl",
           "flex flex-col justify-center px-8 gap-2",
           "transition-transform duration-300 ease-in-out",
           drawerOpen ? "translate-x-0 drawer-open" : "translate-x-full",

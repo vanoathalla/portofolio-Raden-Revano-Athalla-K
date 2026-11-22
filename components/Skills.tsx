@@ -210,23 +210,26 @@ export default function Skills() {
           </h2>
         </div>
 
-        {/* Grid Skill & Tech Stack */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-(--color-border) mb-20 rounded-xl overflow-hidden border border-(--color-border)">
+        {/* Grid Skill & Tech Stack (iOS Frosted Widgets) */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mb-20">
           {skillGroups.map(({ category, items }) => (
             <div
               key={category}
-              className="fade-up bg-(--color-surface) p-8 hover:bg-(--color-base) transition-colors duration-300"
+              className="fade-up bg-white/50 backdrop-blur-md p-6 sm:p-7 rounded-2xl border border-(--color-border)/80 shadow-[0_4px_20px_rgba(0,0,0,0.02)] hover:bg-white/85 hover:shadow-[0_8px_30px_rgba(0,0,0,0.04)] transition-all duration-300 group"
             >
-              <p className="font-sans text-[11px] tracking-[0.15em] uppercase text-(--color-accent) mb-6">
-                {category}
-              </p>
-              <ul className="space-y-3" role="list">
+              <div className="flex items-center gap-2 mb-5">
+                <span className="w-1.5 h-1.5 rounded-full bg-(--color-accent)" />
+                <p className="font-sans text-[11px] font-medium tracking-[0.15em] uppercase text-(--color-accent)">
+                  {category}
+                </p>
+              </div>
+              <ul className="space-y-2.5" role="list">
                 {items.map((item) => (
                   <li
                     key={item}
-                    className="font-sans font-light text-(--color-text-primary) text-sm flex items-center gap-2.5"
+                    className="font-sans font-light text-(--color-text-primary) text-sm flex items-center gap-2"
                   >
-                    <span className="w-1.5 h-1.5 rounded-full bg-(--color-accent) shrink-0" aria-hidden="true" />
+                    <span className="text-[10px] text-(--color-text-muted) group-hover:text-(--color-accent) transition-colors">▹</span>
                     {item}
                   </li>
                 ))}
@@ -259,8 +262,8 @@ export default function Skills() {
                   <button
                     type="button"
                     onClick={() => toggleExp(exp.id)}
-                    className={`w-full py-5 md:py-6 text-left grid grid-cols-1 md:grid-cols-[1.5fr_1fr_auto] items-center gap-3 md:gap-6 group transition-colors duration-200 ${
-                      isExpanded ? "bg-(--color-surface)/70" : "hover:bg-(--color-surface)/30"
+                    className={`w-full py-5 md:py-6 text-left grid grid-cols-1 md:grid-cols-[1.5fr_1fr_auto] items-center gap-3 md:gap-6 group active:scale-[0.99] transition-all duration-200 ${
+                      isExpanded ? "bg-white/40 backdrop-blur-sm rounded-xl px-3 -mx-3" : "hover:bg-white/20"
                     }`}
                     aria-expanded={isExpanded}
                   >
@@ -280,7 +283,7 @@ export default function Skills() {
 
                     {/* Tipe & Periode */}
                     <div className="flex items-center gap-3 pl-4 md:pl-0">
-                      <span className="font-sans text-[10px] tracking-wider uppercase text-(--color-text-muted) border border-(--color-border) px-2 py-0.5 rounded">
+                      <span className="font-sans text-[10px] tracking-wide uppercase text-(--color-text-muted) bg-black/[0.03] border border-(--color-border)/70 px-2.5 py-0.5 rounded-full">
                         {exp.type}
                       </span>
                       <span className="font-sans text-[12px] text-(--color-text-muted)">
@@ -291,7 +294,7 @@ export default function Skills() {
                     {/* Indikator Expand */}
                     <div className="flex items-center justify-end pr-2">
                       <span
-                        className={`w-7 h-7 rounded-full border border-(--color-border) flex items-center justify-center text-[13px] text-(--color-text-muted) group-hover:border-(--color-accent) group-hover:text-(--color-accent) transition-transform duration-300 ${
+                        className={`w-7 h-7 rounded-full border border-(--color-border) flex items-center justify-center text-[13px] text-(--color-text-muted) group-hover:border-(--color-accent) group-hover:text-(--color-accent) transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
                           isExpanded ? "rotate-45 bg-(--color-accent) text-black border-(--color-accent)" : ""
                         }`}
                         aria-hidden="true"
@@ -309,15 +312,15 @@ export default function Skills() {
                         initial={{ height: 0, opacity: 0 }}
                         animate={{ height: "auto", opacity: 1 }}
                         exit={{ height: 0, opacity: 0 }}
-                        transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
-                        className="overflow-hidden bg-(--color-base)/50 border-t border-(--color-border)"
+                        transition={{ type: "spring", stiffness: 280, damping: 28, mass: 0.8 }}
+                        className="overflow-hidden bg-white/50 backdrop-blur-md border border-(--color-border)/80 rounded-2xl my-3 shadow-[0_8px_24px_rgba(0,0,0,0.03)]"
                       >
-                        <div className="p-6 md:p-8 pl-8 md:pl-12">
+                        <div className="p-6 md:p-8 pl-8 md:pl-10">
                           <p className="font-sans font-light text-[15px] text-(--color-text-primary) leading-relaxed mb-4">
                             {exp.summary}
                           </p>
                           <div className="space-y-2">
-                            <span className="font-sans text-[11px] tracking-wider uppercase text-(--color-accent) block mb-2">
+                            <span className="font-sans text-[11px] font-medium tracking-wider uppercase text-(--color-accent) block mb-2">
                               Poin Kontribusi &amp; Tanggung Jawab:
                             </span>
                             {exp.highlights.map((point, idx) => (

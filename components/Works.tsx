@@ -260,13 +260,13 @@ export default function Works() {
                 <button
                   type="button"
                   onClick={() => toggleProject(project.id)}
-                  className={`w-full py-6 md:py-8 text-left grid grid-cols-[40px_1fr_auto] md:grid-cols-[60px_1fr_auto_auto] items-center gap-4 md:gap-8 group transition-colors duration-200 ${
-                    isExpanded ? "bg-(--color-surface)/60" : "hover:bg-(--color-surface)/30"
+                  className={`w-full py-5 md:py-7 text-left grid grid-cols-[36px_1fr_auto] md:grid-cols-[56px_1fr_auto_auto] items-center gap-3 sm:gap-4 md:gap-8 group active:scale-[0.99] transition-all duration-200 ${
+                    isExpanded ? "bg-white/40 backdrop-blur-sm rounded-xl px-3 -mx-3" : "hover:bg-white/20"
                   }`}
                   aria-expanded={isExpanded}
                 >
                   {/* Nomor Indeks */}
-                  <span className="font-sans text-[12px] tracking-[0.15em] text-(--color-text-muted) group-hover:text-(--color-accent) transition-colors">
+                  <span className="font-sans text-[12px] font-mono tracking-wider text-(--color-text-muted) group-hover:text-(--color-accent) transition-colors">
                     {project.index}
                   </span>
 
@@ -275,18 +275,18 @@ export default function Works() {
                     <h3 className="font-display text-xl md:text-2xl text-(--color-text-primary) group-hover:text-(--color-accent) transition-colors leading-snug">
                       {project.title}
                     </h3>
-                    <div className="flex flex-wrap gap-2 mt-2">
+                    <div className="flex flex-wrap gap-1.5 mt-2">
                       {project.tags.slice(0, 3).map((tag) => (
                         <span
                           key={tag}
-                          className="font-sans text-[10px] tracking-wider uppercase text-(--color-text-muted) border border-(--color-border) px-2 py-0.5"
+                          className="font-sans text-[10px] tracking-wide text-(--color-text-muted) bg-black/[0.03] border border-(--color-border)/70 px-2.5 py-0.5 rounded-full"
                         >
                           {tag}
                         </span>
                       ))}
                       {project.tags.length > 3 && (
                         <span className="font-sans text-[10px] text-(--color-text-muted) self-center">
-                          +{project.tags.length - 3} lainnya
+                          +{project.tags.length - 3}
                         </span>
                       )}
                     </div>
@@ -299,11 +299,11 @@ export default function Works() {
 
                   {/* Tombol Toggle Aksi */}
                   <div className="flex items-center gap-2 pl-2">
-                    <span className="hidden sm:inline font-sans text-[11px] tracking-widest uppercase text-(--color-text-muted) group-hover:text-(--color-text-primary) transition-colors">
+                    <span className="hidden sm:inline font-sans text-[11px] tracking-wider uppercase text-(--color-text-muted) group-hover:text-(--color-text-primary) transition-colors">
                       {isExpanded ? "Tutup" : "Preview"}
                     </span>
                     <span
-                      className={`w-8 h-8 rounded-full border border-(--color-border) flex items-center justify-center text-(--color-text-muted) group-hover:border-(--color-accent) group-hover:text-(--color-accent) transition-transform duration-300 ${
+                      className={`w-8 h-8 rounded-full border border-(--color-border) flex items-center justify-center text-(--color-text-muted) group-hover:border-(--color-accent) group-hover:text-(--color-accent) transition-transform duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
                         isExpanded ? "rotate-45 bg-(--color-accent) text-black border-(--color-accent)" : ""
                       }`}
                       aria-hidden="true"
@@ -321,14 +321,14 @@ export default function Works() {
                       initial={{ height: 0, opacity: 0 }}
                       animate={{ height: "auto", opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.35, ease: [0.16, 1, 0.3, 1] }}
-                      className="overflow-hidden bg-(--color-surface)/40 border-t border-(--color-border)"
+                      transition={{ type: "spring", stiffness: 280, damping: 28, mass: 0.8 }}
+                      className="overflow-hidden bg-white/50 backdrop-blur-md border border-(--color-border)/80 rounded-2xl my-3 shadow-[0_8px_30px_rgba(0,0,0,0.03)]"
                     >
                       <div className="p-6 md:p-10 grid grid-cols-1 lg:grid-cols-[1.2fr_1fr] gap-8 md:gap-12 items-start">
                         {/* Kolom Visual (Gambar jika ada, atau Card Arsitektur Bersih jika null) */}
                         <div>
                           {project.image ? (
-                            <div className="relative aspect-[16/10] overflow-hidden rounded-xl border border-(--color-border) bg-(--color-surface-soft) shadow-md group/img">
+                            <div className="relative aspect-[16/10] overflow-hidden rounded-2xl border border-(--color-border)/80 bg-(--color-surface-soft) shadow-sm group/img">
                               <img
                                 src={project.image}
                                 alt={`Screenshot antarmuka ${project.title}`}
@@ -404,13 +404,13 @@ export default function Works() {
                           </div>
 
                           {/* Tombol Akses */}
-                          <div className="flex flex-wrap items-center gap-3 pt-4 border-t border-(--color-border)">
+                          <div className="flex flex-wrap items-center gap-3 pt-4 border-t border-(--color-border)/70">
                             {isLive && (
                               <a
                                 href={project.link}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="w-full sm:w-auto text-center inline-flex items-center justify-center gap-2 font-sans text-[12px] tracking-wider uppercase bg-(--color-text-primary) text-(--color-base) px-5 py-3 sm:py-2.5 rounded hover:bg-(--color-accent) hover:text-black transition-colors duration-200"
+                                className="w-full sm:w-auto text-center inline-flex items-center justify-center gap-2 font-sans text-[12px] font-medium tracking-wide uppercase bg-(--color-text-primary) text-(--color-base) px-6 py-2.5 rounded-full hover:opacity-90 active:scale-[0.97] transition-all duration-200"
                               >
                                 Buka Website Live
                                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
@@ -423,7 +423,7 @@ export default function Works() {
                                 href={project.repoLink}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="w-full sm:w-auto text-center inline-flex items-center justify-center gap-2 font-sans text-[12px] tracking-wider uppercase border border-(--color-border) text-(--color-text-primary) px-5 py-3 sm:py-2.5 rounded hover:border-(--color-accent) hover:text-(--color-accent) transition-colors duration-200"
+                                className="w-full sm:w-auto text-center inline-flex items-center justify-center gap-2 font-sans text-[12px] font-medium tracking-wide uppercase border border-(--color-border)/80 bg-white/50 backdrop-blur-sm text-(--color-text-primary) px-6 py-2.5 rounded-full hover:bg-white/80 active:scale-[0.97] transition-all duration-200"
                               >
                                 Source Code GitHub
                                 <svg width="12" height="12" viewBox="0 0 12 12" fill="none" aria-hidden="true">
